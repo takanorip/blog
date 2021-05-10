@@ -29,6 +29,17 @@ const fs = require('fs');
       content: contents,
       waitUntil: 'domcontentloaded',
       puppeteerArgs: {
+        args: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-accelerated-2d-canvas',
+          '--no-first-run',
+          '--headless',
+          '--no-zygote',
+          '--disable-gpu'
+        ],
+        headless: true,
         defaultViewport: {
           width: 800,
           height: 418
