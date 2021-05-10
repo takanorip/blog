@@ -58,6 +58,7 @@ module.exports = function (eleventyConfig) {
       return {
         id: item.fileSlug,
         objectID: item.fileSlug,
+        url: item.url,
         body: body,
         excerpt: body.substr(0, 79) + '...',
         title: item.data.title,
