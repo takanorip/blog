@@ -27,7 +27,7 @@ const fs = require('fs');
     await nodeHtmlToImage({
       html: `<!DOCTYPE html><html lang="en">{{{htmlString}}}</html>`,
       content: contents,
-      waitUntil: 'networkidle0',
+      waitUntil: 'networkidle2',
       puppeteerArgs: {
         args: [
           '--no-sandbox',
