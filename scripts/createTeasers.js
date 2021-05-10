@@ -1,27 +1,42 @@
 const nodeHtmlToImage = require('node-html-to-image')
 const fs = require('fs');
 
-const dir = './_site/teasers'
-
-fs.readdir(dir, { withFileTypes: true }, (err, dirents) => {
-  if (err) throw err;
-  dirents.forEach(({ name }, i) => {
-    const fileType = name.split('.')[1]
-    if (fileType !== 'html') return
-    fs.readFile(`${dir}/${name}`, 'utf-8', async (err, data) => {
-      if (err) throw err;
-      await nodeHtmlToImage({
-        output: `${dir}/${name.split('.')[0]}.png`,
-        html: data,
-        waitUntil: 'domcontentloaded',
-        puppeteerArgs: {
-          defaultViewport: {
-            width: 800,
-            height: 418
-          }
+(async () => {
+  try {
+    const dir = './_site/teasers'
+    const contents = [];
+    const createObj = async path => {
+      try {
+        const files = await fs.promises.readdir(path);
+    
+        await Promise.all(files.map(async f => {
+          const fileType = f.split('.')[1]
+          if (fileType !== 'html') return
+    
+          const data = await fs.promises.readFile(`${path}/${f}`, 'utf-8');
+          contents.push({
+            htmlString: data,
+            output: `${path}/${f.split('.')[0]}.png`,
+          });
+        }));
+      } catch(e) {
+        console.log(e);
+      }
+    }
+    await createObj(dir);
+    await nodeHtmlToImage({
+      html: `<!DOCTYPE html><html lang="en">{{{htmlString}}}</html>`,
+      content: contents,
+      waitUntil: 'domcontentloaded',
+      puppeteerArgs: {
+        defaultViewport: {
+          width: 800,
+          height: 418
         }
-      })
-      console.log(`${name.split('.')[0]}`)
-    })
-  })
-});
+      }
+    });
+  } catch (error) {
+    console.log(e);
+  }
+  console.log('The images were created successfully!');
+})();
