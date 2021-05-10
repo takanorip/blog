@@ -23,7 +23,7 @@ search.addWidgets([
     templates: {
       item(hit) {
         return `
-        <a class="takanorip-hitLink" href="/blog/${hit.id}">
+        <a class="takanorip-hitLink" href="/posts/${hit.id}">
           <p class="takanorip-hitName">${hit._highlightResult.title.value}</p>
           <p class="takanorip-hitExcerpt">${hit._snippetResult.body.value}</p>
         </a>

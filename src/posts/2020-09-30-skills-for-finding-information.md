@@ -1,7 +1,8 @@
 ---
 title: "情報を検索する技術"
 date: 2020-09-30
-tags: [blog, random]
+tags:
+  - random
 layout: layouts/blog.njk
 ---
 

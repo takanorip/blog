@@ -36,7 +36,6 @@ module.exports = function (eleventyConfig) {
   };
 
   eleventyConfig.addLayoutAlias("blog", "layouts/blog.njk");
-  eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");

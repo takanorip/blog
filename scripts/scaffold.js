@@ -21,4 +21,4 @@ layout: layouts/blog.njk
 
 console.log(tag);
 
-fsPromises.writeFile(`./src/blog/${fileName}.md`, template);
+fsPromises.writeFile(`./src/posts/${fileName}.md`, template);

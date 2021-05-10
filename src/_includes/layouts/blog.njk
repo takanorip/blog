@@ -21,7 +21,7 @@ templateClass: blog-content
     <ul class="takanorip-blogTagList">
     {%- for t in tags -%}
       {% if t !== 'blog' %}
-      {% set tagUrl = '/blog/tags/' + t + '/' %}
+      {% set tagUrl = '/tags/' + t + '/' %}
       <li class="takanorip-blogTagItem"><a class="takanorip-blogTagLink" href="{{ tagUrl | url }}">{{ t }}</a></li>
       {% endif %}
     {%- endfor -%}
