@@ -35,7 +35,7 @@ const fs = require('fs');
         }
       }
     });
-  } catch (error) {
+  } catch (e) {
     console.log(e);
   }
   console.log('The images were created successfully!');
