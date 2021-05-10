@@ -35,7 +35,6 @@ module.exports = function (eleventyConfig) {
     return text.replace(/\[\[toc\]\]/g, "").replace(/\r?\n/g, "");
   };
 
-  eleventyConfig.addLayoutAlias("works", "layouts/works.njk");
   eleventyConfig.addLayoutAlias("blog", "layouts/blog.njk");
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("src/img");

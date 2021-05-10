@@ -1,4 +1,6 @@
-# takanorip.com 4.0
+# blog.takanorip.com
+
+Build with eleventy
 
 https://takanorip.com/
 
