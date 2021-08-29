@@ -32,7 +32,7 @@ templateClass: blog-content
   {{ content | safe }}
 </div>
 <div class="takanorip-twitter">
-  {% set tweetText = title + ' - takanorip blog https://takanorip.com' + page.url %}
+  {% set tweetText = title + ' - takanorip blog https://blog.takanorip.com' + page.url %}
   {% set tweetUrl %}https://twitter.com/intent/tweet?text={{ tweetText | urlencode }}{% endset %}
   <a
     class="takanorip-twitterLink"
