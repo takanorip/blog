@@ -1,0 +1,59 @@
+---
+title: "週報：2021年9月第4週"
+date: 2021-09-26
+tags:
+  - random
+  - weekly report
+layout: layouts/blog.njk
+---
+
+### 9月20日（月）
+敬老の日。
+家でゴロゴロした。
+先週打ったワクチンの副反応がまだ残っていたのか、すごく頭が痛かった。
+DEATHLOOPというゲームを買ってやっていたんだが、これが思いの外面白かった。
+
+### 9月21日（火）
+一日なにもせず過ごした。
+seyaさんとすごく久しぶりに話をした。
+キャリアと言うかやりたいことが近そうだなと勝手に思っていたので、いろいろお話できて楽しかった。
+
+### 9月22日（水）
+心療内科に行き適応障害だと診断された。
+しばらく休職することになった。
+いろいろ考えてたけど、とりあえず全部忘れることにした。
+夜はよしこさんの模擬面接に参加した。
+いろいろ質問されてぱっと答えられないことがいくつかあったので勉強し直さないとなあと思った。
+模擬面接をする試みはすごく良いと思ったので、これを機に広まると良さそう。
+
+### 9月23日（木）
+赤レンガ倉庫に散歩しに行った。
+途中で象の鼻パークのカフェでソフトクリームを食べた。
+大さん橋に飛鳥Ⅱが停泊してて、きれいだった。
+よく晴れていて少し暑かったが海沿いを歩くにはちょうどよい天気だった。
+
+![](https://lh3.googleusercontent.com/Fs_lRakimNbzITEHs4TuUTmGu6iONLRlqbVz58dpGG-REByQpvDqNCtwGVZ8wTN4CxAbdUlfdXs14hF-QsgX35gXJYiPwyUyJA6Vqf5UQxBvajFFS7yYJ96_p_YWy_7SHmRsSmORd1QRCSmu7ppyA2rm5vnMGdsoz8ki6f610N7FlZ5TcVq_PKmd2-XcErTU4ak5LFSFV4sCsWQ9W15rAfH8CyFGa8V5buQhjl_e46FT0dDrlW7kJyyC5VcFYmBDI7TM8e4cb4zhDrIK3UUQx2oMZwxCMQ16Qdl-7REjRn85rJ7z720bWkBsdPsMhPWLFiOpvL2knMHeQssek4VzO_sN0FSE1_SqOlUBpIdJsDeBz-8rSOO6InStN5GCkDG1SNDlOMParxNfo3q01OZ6pST2_hnCuqUWmjqEN9sPKUrTdUgtZULuDrQepdeFQQ2yQxtEMvEOOSptSyqsyxFuV4pi1_xoKre_hXqkPMfCvJ_SiQU8D3RAf5Md3H2IL9Ck2HqagreFFEt5oa0rpAgknFocc0hXll0yr4SQUyJ3LvtLd1i1x_FflH6VVZfLrOThzg1tFlM3-EUUUJUCn19Ts15rTsnX0oHvM0JKhgWHLZrKIde2p-n-YeGKkHsfYR2hlDiH0AjNhKTerFBbsUGj-HcmcP1pY9QatKOAp0oavPhKAyOYvHw-Df3tU_b0mcHazliMgwcjoXRlQynvzRwULw4=w2294-h1291-no?authuser=0)
+
+### 9月24日（金）
+久しぶりにサイゼリヤに行った。
+サイゼリヤはキャッシュレス決済ができるようになり死角がなくなった。
+辛味チキンの本数が減っていて、最近の様々なものの価格高騰について思いを馳せるなどした。
+有隣堂にも行った。
+処方された漢方薬がセロリ味でまじで吐きそうだったが、もっと変な味の薬を出されても困るので我慢して飲むことにしよう。
+
+### 9月25日（土）
+Podcastの編集作業をした後にコメダ珈琲に行きコメ牛を食べた。
+うまかった。
+コメダのサイズ感は何回行っても慣れない。
+
+![](https://lh3.googleusercontent.com/W8rX5QuQlZnDxzh8L6mGBMGwhbgYvHvxEM5z5kz_Nes8CmDJ2JiIesYVl2hPe563S34Qn69ejq-y7BhMxL6LNDZH7Z-_cj-VTrOGnuSRqgOX27HNsCjE2Tvvn3bxTh98I56KfCZmxOnbUyc2BDSSXoSE_h8FPT7PAVsBB3dNrgSizqI5aEBTK-Zy-xgGTN8aGQFdmYM5x_-IiqmUF8JHXXv4eLyeMFyvRi50WAUKrzsC5jMmWqH1EFn3l_S0t8a7nUTTnaREtOQswsHqBxOmAk9AfO5FEAWEZMQJuLdEw99GvlmN2WMAXLz3_SNx5ioZ_37mZkmxjK2hs7duoK5EVMrZgflb2wmmeD107LI6IgjPxnC_1s4_e7rWvcK6viIkxozjI8nTMXubr_9FKGXWsZwh6dWg9KjDrCRY-EXdTENpmi_irgpZPy9EI9B3igYvYhF09XGnvN4VkY2rdmcrSrRfBjfGkEf61BeXmNNsMBKHlMOm8tZr7pWPFiTFgSbXLN_N9CXA41W3tee4LfFzNJQudxPb-Ce3QZLdt5G6OEKJXtfn6GKwrIhawZtYNFlQZqF0nm2eSGa0h7rjWWcAfxyd_woRKajV9cCOKchNzbK_2KFz5rqnsxQymaZNPezM1PwZFGt0_xU-H6U_2B6brpgkRvhm_ebsmz-EijSOx34rCHq-BU5cGsORg-P92Lrrk6slO_1gtaLns6LSibGDUcE=w2294-h1291-no?authuser=0)
+
+### 9月26日（日）
+職務経歴書を書いた。
+今まできちんと書いたことがなかったので疲れた。
+すこし休んだおかげか、文章を書いたり読んだりするのがちょっとできるようになってきた。
+007：スカイフォールを見た。
+隣駅まで散歩した。
+ミスドでお茶して味噌ラーメンを食べて帰った。
+短いながら満足感のある外出だった。
+久しぶりに湯船につかった。
