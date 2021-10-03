@@ -85,6 +85,7 @@ ul, ol {
 
 a {
   text-decoration: none;
+  overflow-wrap: break-word;
 }
 
 blockquote {
