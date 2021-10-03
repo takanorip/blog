@@ -1,6 +1,6 @@
 ---
-title: "週報：2021年9月第4週"
-date: 2021-09-26
+title: "週報：2021年10月第1週"
+date: 2021-10-03
 tags:
   - random
   - weekly report
