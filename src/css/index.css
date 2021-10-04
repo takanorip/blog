@@ -114,6 +114,16 @@ summary {
   font-size: var(--h2-font-size);
 }
 
+.youtube {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: var(--spacing-3);
+}
+.youtube iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .takanorip-blogBoby blockquote > p {
   margin-bottom: 0;
 }
