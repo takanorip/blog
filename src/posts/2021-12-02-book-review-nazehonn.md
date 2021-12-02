@@ -9,6 +9,8 @@ layout: layouts/blog.njk
 
 この記事は [takanorip Advent Calendar 2021](https://adventar.org/calendars/7125) 2日目の記事です。
 
+[「未来のきみを変える読書術　なぜ本を読むのか?」 苫野一徳](https://www.chikumashobo.co.jp/product/9784480251121/)
+
 この本はTwitterで見かけて良さそうだったので買った。
 https://twitter.com/kasaharu/status/1456889629752258560
 高校生や大学生の若者が対象読者のようだったが読書論は個人的に好きな話なので読んでみたかった。
