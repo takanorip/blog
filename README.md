@@ -2,7 +2,7 @@
 
 Build with eleventy
 
-https://takanorip.com/
+https://blog.takanorip.com/
 
 ```
 npx @11ty/eleventy --serve --input=src
