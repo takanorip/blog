@@ -9,6 +9,9 @@ module.exports = function (eleventyConfig) {
   const removeMd = require("remove-markdown");
   const eleventyGoogleFonts = require("eleventy-google-fonts");
   const embedTwitter = require("eleventy-plugin-embed-twitter");
+  const { loadDefaultJapaneseParser } = require("budoux");
+
+  const parser = loadDefaultJapaneseParser();
 
   const markdownLib = markdownIt({
     html: true,
@@ -65,6 +68,9 @@ module.exports = function (eleventyConfig) {
         createdAt: format(item.date, "yyyy-MM-dd"),
       };
     });
+  });
+  eleventyConfig.addShortcode("budoux", t => {
+    return parser.translateHTMLString(t);
   });
 
   return {

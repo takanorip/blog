@@ -10,7 +10,7 @@ templateClass: blog-list-content
       <p class="takanorip-blogListDate">{{ blog.date.toISOString().split('T')[0] }}</p>
     </div>
     <a class="takanorip-blogListLink" href="{{ blog.url }}">
-      {{ blog.data.title }}
+      {% budoux blog.data.title %}
     </a>
   </li>
 {%- endfor -%}
