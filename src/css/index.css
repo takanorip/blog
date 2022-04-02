@@ -226,7 +226,7 @@ summary {
 
 .takanorip-blogBoby ol>li::before {
   counter-increment: list;
-  content: counter(list)'.';
+  content: counter(list) '.';
   margin-right: var(--spacing-1);
 }
 
@@ -631,6 +631,7 @@ summary {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .takanorip-blogTagItem:not(:last-child)::after {
@@ -747,6 +748,7 @@ summary {
   margin-left: 8px;
   display: inline;
   line-height: 0;
+  color: #000;
 }
 
 .logo-outline {
