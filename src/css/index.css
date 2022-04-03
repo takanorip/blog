@@ -219,15 +219,22 @@ summary {
   margin-bottom: 0;
 }
 
+.takanorip-blogBoby ul>li,
+.takanorip-blogBoby ol>li {
+  display: flex;
+}
+
 .takanorip-blogBoby ul>li::before {
   content: '-';
   margin-right: var(--spacing-1);
+  font-weight: bold;
 }
 
 .takanorip-blogBoby ol>li::before {
   counter-increment: list;
   content: counter(list) '.';
   margin-right: var(--spacing-1);
+  font-weight: bold;
 }
 
 .takanorip-blogBoby a {
