@@ -2,8 +2,6 @@
   --content-max-width: 1140px;
   --content-width: calc(100% - 32px);
   --text-max-width: 720px;
-  --medium-font-family: "FuturaLTPro-Book", "Hiragino Sans", sans-serif;
-  --bold-font-family: "FuturaLTPro-Bold", 'Overpass', 'Noto Sans JP', "Hiragino Sans", sans-serif;
   --blog-font-family: 'Noto Sans JP', "Hiragino Sans", sans-serif;
   --code-font-family: 'Overpass Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   --title-font-size: 16rem;
@@ -22,12 +20,12 @@
   --spacing-13: 6.5rem;
   --spacing-21: 10.5rem;
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-  --color-link: #004cab;
-  --color-primary1: #009EFD;
-  --color-primary2: #2AF598;
-  --color-blog-black: #1f2b33;
-  --color-blog-gray: #eaeef2;
-  --color-blog-darkGray: #8a9daa;
+  --color-link: #0064CA;
+  --color-primary1: #0064CA;
+  --color-primary2: #008D18;
+  --color-blog-black: #001319;
+  --color-blog-gray: #DDE0E4;
+  --color-blog-darkGray: #525960;
   --color-code-black: #303f4a;
   --color-code-gray: #cbd5db;
 }
@@ -38,16 +36,8 @@ html, body {
 
 body {
   box-sizing: border-box;
-  color: #fff;
-  background-color: #000;
-  font-family: var(--bold-font-family);
+  font-family: var(--blog-font-family);
   margin: 0;
-  letter-spacing: 1.25px;
-  /* -webkit-font-smoothing: antialiased; */
-}
-
-.takanorip-blogBase {
-  background-color: var(--color-blog-gray);
 }
 
 .takanorip-blogBase,
