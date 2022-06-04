@@ -1,13 +1,14 @@
 :root {
-  --content-max-width: 1140px;
+  --content-max-width: 800px;
   --content-width: calc(100% - 32px);
   --text-max-width: 720px;
   --blog-font-family: 'Noto Sans JP', "Hiragino Sans", sans-serif;
   --code-font-family: 'Overpass Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   --title-font-size: 16rem;
-  --h1-font-size: calc(42 / 16 * 1rem);
-  --h2-font-size: calc(25 / 16 * 1rem);
-  --h3-font-size: calc(20 / 16 * 1rem);
+  --h1-font-size: calc(40 / 16 * 1rem);
+  --h2-font-size: calc(32 / 16 * 1rem);
+  --h3-font-size: calc(24 / 16 * 1rem);
+  --h4-font-size: calc(20 / 16 * 1rem);
   --body-small-font-size: calc(18 / 16 * 1rem);
   --body-font-size: 1rem;
   --spacing-0: 0.25rem;
@@ -26,8 +27,8 @@
   --color-blog-black: #001319;
   --color-blog-gray: #DDE0E4;
   --color-blog-darkGray: #525960;
-  --color-code-black: #303f4a;
-  --color-code-gray: #cbd5db;
+  --color-code-black: #001319;
+  --color-code-gray: #F4F5F6;
 }
 
 html, body {
@@ -40,33 +41,15 @@ body {
   margin: 0;
 }
 
-.takanorip-blogBase,
-.takanorip-blogBase h1,
-.takanorip-blogBase h2,
-.takanorip-blogBase h3,
-.takanorip-blogBase p,
-.takanorip-blogBase a,
-.takanorip-blogBase ul,
-.takanorip-blogBase ol,
-.takanorip-blogBase li {
-  color: var(--color-blog-black);
-  letter-spacing: 0;
-}
-
 .takanorip-blogBase img {
   max-width: 640px;
   width: 100%;
 }
 
 h1, h2, h3, p, a, ul, ol, li {
-  color: #fff;
+  color: var(--color-blog-black);
   margin: 0;
   padding: 0;
-}
-
-p, a, li, dd, dt {
-  line-height: 1.8;
-  max-width: var(--text-max-width);
 }
 
 ul, ol {
@@ -74,8 +57,8 @@ ul, ol {
 }
 
 a {
-  text-decoration: none;
   overflow-wrap: break-word;
+  text-decoration: none;
 }
 
 blockquote {
@@ -125,6 +108,7 @@ summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   position: relative;
   z-index: 2;
   letter-spacing: 2px;
@@ -137,17 +121,17 @@ summary {
 .takanorip-headerLogoLink {
   display: block;
   padding: var(--spacing-3) 0;
-  font-size: var(--h2-font-size);
+  font-size: var(--h4-font-size);
 }
 
 .takanorip-headerList {
   display: flex;
   align-items: center;
+  gap: var(--spacing-3);
 }
 
 .takanorip-headerItem {
-  padding-left: var(--spacing-3);
-  font-size: var(--h3-font-size);
+  font-size: var(--body-font-size);
 }
 
 .takanorip-headerLink {
@@ -164,7 +148,7 @@ summary {
   position: absolute;
   bottom: 12px;
   left: 0;
-  background: linear-gradient(90deg, var(--color-primary2) 0%, var(--color-primary1) 100%);
+  background-color: var(--color-primary1);
   transform: scaleX(0);
   transform-origin: center left;
   transition: transform 0.4s var(--ease-out-expo);
@@ -193,42 +177,43 @@ summary {
   padding-bottom: var(--spacing-13);
 }
 
-.takanorip-blogBase .takanorip-contents a:hover {
-  text-decoration: underline;
+.takanorip-blogBoby li:not(:first-child) {
+  margin-top: 0.5rem;
 }
 
 .takanorip-blogBoby ul,
 .takanorip-blogBoby ol {
-  margin-left: var(--spacing-2);
+  margin-left: var(--spacing-4);
   margin-bottom: var(--spacing-3);
   counter-reset: list;
 }
 
 .takanorip-blogBoby li>ul,
 .takanorip-blogBoby li>ol {
+  margin-top: 0.5rem;
   margin-bottom: 0;
+  width: 100%;
 }
 
-.takanorip-blogBoby ul>li,
+.takanorip-blogBoby ul>li {
+  list-style: disc;
+}
+
+.takanorip-blogBoby ul>li::marker {
+  color: var(--color-blog-darkGray);
+}
+
 .takanorip-blogBoby ol>li {
-  display: flex;
-}
-
-.takanorip-blogBoby ul>li::before {
-  content: '-';
-  margin-right: var(--spacing-1);
-  font-weight: bold;
-}
-
-.takanorip-blogBoby ol>li::before {
-  counter-increment: list;
-  content: counter(list) '.';
-  margin-right: var(--spacing-1);
-  font-weight: bold;
+  list-style: decimal;
 }
 
 .takanorip-blogBoby a {
   color: var(--color-link);
+  text-decoration: underline;
+}
+
+.takanorip-blogBoby a:hover {
+  text-decoration: none;
 }
 
 .takanorip-headSection {
@@ -571,6 +556,40 @@ summary {
   margin-bottom: var(--spacing-1);
 }
 
+.takanorip-blogYearsTitle {
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--spacing-1);
+}
+
+.takanorip-blogYearsSection {
+  margin-bottom: var(--spacing-13);
+}
+
+.takanorip-blogYearsList {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.takanorip-blogYearsLink {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+.takanorip-blogYearsLink:hover {
+  text-decoration: none;
+}
+
+.takanorip-blogYear {
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--spacing-3);
+}
+
+.takanorip-blogIndex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-13);
+}
+
 .takanorip-blogTagList::before {
   content: '[';
   margin-right: var(--spacing-0);
@@ -581,8 +600,10 @@ summary {
   margin-left: var(--spacing-0);
 }
 
-.takanorip-blogListItem:nth-child(n+2) {
-  margin-top: var(--spacing-3);
+.takanorip-blogList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
 }
 
 .takanorip-blogListInfo {
@@ -590,9 +611,14 @@ summary {
 }
 
 .takanorip-blogListLink {
-  font-weight: bold;
-  font-size: var(--h2-font-size);
+  font-size: var(--h3-font-size);
   margin-bottom: var(--spacing-1);
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+.takanorip-blogListLink:hover {
+  text-decoration: none;
 }
 
 .takanorip-blogTagsTitle {
@@ -602,6 +628,7 @@ summary {
 
 .takanorip-blogTitle {
   font-size: var(--h1-font-size);
+  color: var(--color-primary1);
 }
 
 .takanorip-blogHead {
@@ -611,7 +638,7 @@ summary {
 .takanorip-blogInfo {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
   font-family: var(--code-font-family);
 }
 
@@ -652,6 +679,12 @@ summary {
 
 .takanorip-blogBoby p {
   margin-bottom: var(--spacing-3);
+}
+
+.takanorip-blogBoby p,
+.takanorip-blogBoby li,
+.takanorip-blogBoby p {
+  line-height: 1.8;
 }
 
 .takanorip-blogBoby h1,
@@ -757,119 +790,49 @@ summary {
 }
 
 @media (max-width: 640px) {
-  .takanorip-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000;
-  }
-
-  .takanorip-blogBase .takanorip-nav {
-    background-color: var(--color-blog-gray);
-    border-top: 2px solid var(--color-blog-black);
-    box-sizing: border-box;
-  }
-
   .takanorip-blogBase .takanorip-contents {
-    padding-top: var(--spacing-3);
+    padding-top: var(--spacing-5);
+  }
+
+  .takanorip-header {
+    display: block;
+    padding-top: var(--spacing-2);
+  }
+
+  .takanorip-headerLogo {
+    margin-bottom: var(--spacing-3);
   }
 
   .takanorip-headerLogoLink {
-    font-size: var(--h3-font-size);
-  }
-
-  .takanorip-headerList {
-    justify-content: center;
-  }
-
-  .takanorip-headerItem {
-    padding-left: calc(var(--spacing-3) / 2);
-    padding-right: calc(var(--spacing-3) / 2);
+    font-size: var(--body-font-size);
+    padding: 0;
   }
 
   .takanorip-headerLink::after {
-    bottom: 16px;
+    bottom: 0;
   }
 
   .takanorip-headSection {
     padding: var(--spacing-5) 0;
   }
 
-  .takanorip-headTitle {
-    font-size: var(--h1-font-size);
-  }
-
-  .takanorip-sectionTitle {
-    font-size: var(--h2-font-size);
-  }
-
-  /* TOP */
-
-  .takanorip-topHeadline {
-    font-size: 7.9vw;
-  }
-
-  .takanorip-topHeadlineText {
-    padding: var(--spacing-1) var(--spacing-0);
-  }
-
-  .takanorip-topTree {
-    top: 140px;
-    transform: translate(-50%, 0);
-  }
-
-  /* ABOUT */
-
-  /* WORKS */
-  
-  .takanorip-worksLink {
+  .takanorip-headerLink {
+    font-weight: normal;
+    padding: 0;
     text-decoration: underline;
   }
 
-  .takanorip-worksLinkWrap {
-    padding-right: 0;
+  .takanorip-blogYearsSection {
+    margin-bottom: var(--spacing-8);
   }
 
-  .takanorip-worksLinkIcon {
-    display: none;
-  }
-
-  .takanorip-worksItem {
-    font-size: var(--h2-font-size);
-  }
-
-  .takanorip-workHead {
-    display: block;
-    padding: var(--spacing-5) 0;
-  }
-  
-  .takanorip-workTitle {
-    font-size: var(--h2-font-size);
-    padding: var(--spacing-1);
-  }
-
-  .takanorip-workViewDetail {
-    margin-top: var(--spacing-2);
-  }
-
-  .takanorip-workTechs,
-  .takanorip-workCategory {
-    display: block;
-  }
-
-  .takanorip-workTechsTitle,
-  .takanorip-workCategoryTitle {
-    margin-right: 0;
-    margin-bottom: var(--spacing-1);
-  }
-
-  .takanorip-blogTitle {
-    font-size: var(--h2-font-size);
+  .takanorip-blogIndex {
+    gap: var(--spacing-8);
   }
 
   .takanorip-blogInfo {
     display: block;
+    margin-bottom: var(--spacing-5);
   }
 
   .takanorip-blogDate {
@@ -896,7 +859,7 @@ summary {
   .takanorip-blogBase ul,
   .takanorip-blogBase ol,
   .takanorip-blogBase li {
-    color: var(--color-blog-gray);
+    color: #fff;
   }
 
   blockquote::before {
@@ -906,13 +869,6 @@ summary {
   code {
     background-color: var(--color-code-gray);
     color: var(--color-code-black);
-  }
-
-  @media (max-width: 640px) {
-    .takanorip-blogBase .takanorip-nav {
-      background-color: var(--color-blog-black);
-      border-top: 2px solid var(--color-blog-gray);
-    }
   }
 }
 

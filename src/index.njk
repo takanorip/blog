@@ -3,15 +3,30 @@ layout: layouts/blogBase.njk
 templateClass: blog-list-content
 ---
 
-<ul class="takanorip-blogList">
-{%- for blog in collections.blog | reverse -%}
-  <li class="takanorip-blogListItem">
-    <div class="takanorip-blogListInfo">
-      <p class="takanorip-blogListDate">{{ blog.date.toISOString().split('T')[0] }}</p>
-    </div>
-    <a class="takanorip-blogListLink" href="{{ blog.url }}">
-      {% budoux blog.data.title %}
-    </a>
-  </li>
-{%- endfor -%}
-</ul>
+<section class="takanorip-blogYearsSection">
+  <h3 class="takanorip-blogYearsTitle">Archive</h3>
+  <ul class="takanorip-blogYearsList">
+    {%- for year in collections.postsYears -%}
+    <li><a class="takanorip-blogYearsLink" href="#{{year}}">{{year}}</a></li>
+    {%- endfor -%}
+  </ul>
+</section>
+<div class="takanorip-blogIndex">
+  {%- for year in collections.postsYears -%}
+  <section class="takanorip-blogBox">
+    <h3 class="takanorip-blogYear" id="{{year}}">{{year}}</h3>
+    <ul class="takanorip-blogList">
+      {%- for post in collections.postsGroupedByYear[year] | reverse -%}
+      <li class="takanorip-blogListItem">
+        <div class="takanorip-blogListInfo">
+          <p class="takanorip-blogListDate">{{ post.date.toISOString().split('T')[0] }}</p>
+        </div>
+        <a class="takanorip-blogListLink" href="{{ post.url }}">
+          {% budoux post.data.title %}
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+  {%- endfor -%}
+</div>

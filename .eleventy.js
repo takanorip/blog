@@ -10,6 +10,9 @@ module.exports = function (eleventyConfig) {
   const eleventyGoogleFonts = require("eleventy-google-fonts");
   const embedTwitter = require("eleventy-plugin-embed-twitter");
   const { loadDefaultJapaneseParser } = require("budoux");
+  const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+  const _groupBy = require('lodash.groupby');
+  const _uniq = require('lodash.uniq');
 
   const parser = loadDefaultJapaneseParser();
 
@@ -42,8 +45,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
-  eleventyConfig.addPassthroughCopy("src/**/*.jpg");
-  eleventyConfig.addPassthroughCopy("src/**/*.png");
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(eleventyGoogleFonts);
@@ -71,6 +72,17 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addShortcode("budoux", t => {
     return parser.translateHTMLString(t);
+  });
+  eleventyConfig.addPlugin(UpgradeHelper);
+  eleventyConfig.addCollection("postsGroupedByYear", (collection) => {
+    const posts =  collection.getFilteredByTags("blog");
+    return _groupBy(posts, (item) => new Date(item.data.date).getFullYear());
+  });
+  eleventyConfig.addCollection("postsYears", (collection) => {
+    const posts =  collection.getFilteredByTags("blog");
+    const years = _uniq(posts.map(item => new Date(item.data.date).getFullYear()));
+    const sortedYears = years.sort((a, b) => b - a);
+    return sortedYears;
   });
 
   return {
