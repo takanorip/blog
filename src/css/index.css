@@ -822,6 +822,10 @@ summary {
     text-decoration: underline;
   }
 
+  .takanorip-blogTitle {
+    font-size: var(--h2-font-size);
+  }
+
   .takanorip-blogYearsSection {
     margin-bottom: var(--spacing-8);
   }
@@ -863,7 +867,7 @@ summary {
   }
 
   blockquote::before {
-    background-color: var(--color-blog-gray);
+    background-color: var(--color-blog-darkGray);
   }
 
   code {
