@@ -44,6 +44,8 @@ body {
 .takanorip-blogBase img {
   max-width: 640px;
   width: 100%;
+  object-fit: contain;
+  aspect-ratio: 16/9;
 }
 
 h1, h2, h3, p, a, ul, ol, li {
