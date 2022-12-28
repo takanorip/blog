@@ -81,3 +81,9 @@ https://www.nitori-net.jp/ec/product/4021853s/
 家のルーターがポンコツだったので、Amazonで良さげなやつを買った。他のルーターとの比較はできないけど、Wi-Fi経由の通信速度が400〜500Mbpsくらい出るようになったので満足している。（以前はMAX200〜300Mbpsくらい）
 
 https://www.amazon.co.jp/dp/B09R44RVCL
+
+## ACR Pro Alice Plus（キーボード）
+
+アリスレイアウトのキーボードを買った。分割キーボードを買おうかと思ったんだけどちょうどよさそうなやつがなくて悩んでいたときに遊舎工房のサイトでこれを見つけた。アリスレイアウト慣れるまでは使いにくかったが、慣れたらとても打ちやすくて良い。手の間隔を広く保てるし肘を外に張りながら打てるので楽。もう普通のキーボードには戻れない気がする。
+
+https://en.akkogear.com/product/acr-pro-alice-plus-mechanical-keyboard/
