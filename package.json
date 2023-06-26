@@ -7,7 +7,7 @@
     "dev": "npx @11ty/eleventy --input=src --serve",
     "create-teasers": "node scripts/createTeasers.js",
     "save-algolia": "node scripts/algoliaIndex.js",
-    "build": "eleventy --input=src && yarn create-teasers && yarn save-algolia",
+    "build": "eleventy --input=src && npm run create-teasers && npm run save-algolia",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
