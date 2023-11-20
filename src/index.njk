@@ -18,12 +18,14 @@ templateClass: blog-list-content
     <ul class="takanorip-blogList">
       {%- for post in collections.postsGroupedByYear[year] | reverse -%}
       <li class="takanorip-blogListItem">
-        <div class="takanorip-blogListInfo">
-          <p class="takanorip-blogListDate">{{ post.date.toISOString().split('T')[0] }}</p>
-        </div>
         <a class="takanorip-blogListLink" href="{{ post.url }}">
           {% budoux post.data.title %}
         </a>
+        <div class="takanorip-blogListInfo">
+          <p class="takanorip-blogListDate">
+            {{ post.date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+          </p>
+        </div>
       </li>
       {%- endfor -%}
     </ul>

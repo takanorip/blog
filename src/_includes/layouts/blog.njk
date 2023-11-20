@@ -4,27 +4,17 @@ templateClass: blog-content
 ---
 <h2 class="takanorip-blogTitle takanorip-blogHead">{% budoux title %}</h2>
 <div class="takanorip-blogInfo">
-  {% if updated_at %}
   <div class="takanorip-blogDate">
-    <p class="takanorip-blogDateTitle">updated at:</p>
-    <p class="takanorip-blogDateDate">{{ updated_at.toISOString().split('T')[0] }}</p>
+    <p class="takanorip-blogDateDate">{{ date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' }) }}</p>
   </div>
-  {% endif %}
-  <div class="takanorip-blogDate">
-    <p class="takanorip-blogDateTitle">created at:</p>
-    <p class="takanorip-blogDateDate">{{ date.toISOString().split('T')[0] }}</p>
-  </div>
-  <div class="takanorip-blogTag">
-    <p class="takanorip-blogTagTitle">tags:</p>
-    <ul class="takanorip-blogTagList">
+  <ul class="takanorip-blogTagList">
     {%- for t in tags -%}
       {% if t !== 'blog' %}
       {% set tagUrl = '/tags/' + t + '/' %}
       <li class="takanorip-blogTagItem"><a class="takanorip-blogTagLink" href="{{ tagUrl | url }}">{{ t }}</a></li>
       {% endif %}
     {%- endfor -%}
-    </ul>
-  </div>
+  </ul>
 </div>
 <div class="takanorip-blogBoby">
   {{ content | safe }}

@@ -1,18 +1,20 @@
 :root {
-  --content-max-width: 800px;
+  --content-max-width: 640px;
   --content-width: calc(100% - 32px);
-  --text-max-width: 720px;
-  --blog-font-family: 'Noto Sans JP', "Hiragino Sans", sans-serif;
-  --code-font-family: 'Overpass Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --text-max-width: 640px;
+  --blog-font-family: "Murecho", "Hiragino Sans", sans-serif;
+  --code-font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   --title-font-size: 16rem;
   --h1-font-size: calc(40 / 16 * 1rem);
   --h2-font-size: calc(32 / 16 * 1rem);
   --h3-font-size: calc(24 / 16 * 1rem);
   --h4-font-size: calc(20 / 16 * 1rem);
-  --body-small-font-size: calc(18 / 16 * 1rem);
+  --body-large-font-size: calc(18 / 16 * 1rem);
   --body-font-size: 1rem;
+  --body-small-font-size: calc(14 / 16 * 1rem);
   --spacing-0: 0.25rem;
   --spacing-1: 0.5rem;
+  --spacing-1_5: 0.75rem;
   --spacing-2: 1rem;
   --spacing-3: 1.5rem;
   --spacing-4: 2rem;
@@ -21,17 +23,19 @@
   --spacing-13: 6.5rem;
   --spacing-21: 10.5rem;
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-  --color-link: #0064CA;
-  --color-primary1: #0064CA;
-  --color-primary2: #008D18;
+  --color-link: #0064ca;
+  --color-primary1: #0064ca;
+  --color-primary2: #008d18;
   --color-blog-black: #001319;
-  --color-blog-gray: #DDE0E4;
+  --color-blog-gray: #dde0e4;
+  --color-blog-lightGray: #f4f5f6;
   --color-blog-darkGray: #525960;
   --color-code-black: #001319;
-  --color-code-gray: #F4F5F6;
+  --color-code-gray: #f4f5f6;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -39,6 +43,7 @@ body {
   box-sizing: border-box;
   font-family: var(--blog-font-family);
   margin: 0;
+  letter-spacing: 0.02em;
 }
 
 .takanorip-blogBase img {
@@ -48,13 +53,21 @@ body {
   aspect-ratio: 16/9;
 }
 
-h1, h2, h3, p, a, ul, ol, li {
+h1,
+h2,
+h3,
+p,
+a,
+ul,
+ol,
+li {
   color: var(--color-blog-black);
   margin: 0;
   padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -71,7 +84,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: '';
+  content: "";
   width: 4px;
   position: absolute;
   top: 0;
@@ -86,7 +99,7 @@ details {
 }
 
 summary {
-  font-size: var(--h2-font-size);
+  font-size: var(--h4-font-size);
 }
 
 .youtube {
@@ -144,7 +157,7 @@ summary {
 }
 
 .takanorip-headerLink::after {
-  content: '';
+  content: "";
   width: 100%;
   height: 2px;
   position: absolute;
@@ -180,32 +193,33 @@ summary {
 }
 
 .takanorip-blogBoby li:not(:first-child) {
-  margin-top: 0.5rem;
+  margin-top: 0.5em;
 }
 
 .takanorip-blogBoby ul,
 .takanorip-blogBoby ol {
   margin-left: var(--spacing-4);
-  margin-bottom: var(--spacing-3);
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
   counter-reset: list;
 }
 
-.takanorip-blogBoby li>ul,
-.takanorip-blogBoby li>ol {
+.takanorip-blogBoby li > ul,
+.takanorip-blogBoby li > ol {
   margin-top: 0.5rem;
   margin-bottom: 0;
   width: 100%;
 }
 
-.takanorip-blogBoby ul>li {
+.takanorip-blogBoby ul > li {
   list-style: disc;
 }
 
-.takanorip-blogBoby ul>li::marker {
+.takanorip-blogBoby ul > li::marker {
   color: var(--color-blog-darkGray);
 }
 
-.takanorip-blogBoby ol>li {
+.takanorip-blogBoby ol > li {
   list-style: decimal;
 }
 
@@ -244,11 +258,11 @@ summary {
 }
 
 .takanorip-sectionTitle::before {
-  content: '';
+  content: "";
   display: block;
   width: 20px;
-  height:20px;
-  background-image: url('/img/cursor-gradient.svg');
+  height: 20px;
+  background-image: url("/img/cursor-gradient.svg");
   background-position: center;
   background-size: contain;
   position: absolute;
@@ -269,14 +283,14 @@ summary {
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: url('/img/tree.svg');
+  background-image: url("/img/tree.svg");
   background-position: center;
   background-size: cover;
   z-index: -1;
 }
 
 .takanorip-background::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -371,11 +385,11 @@ summary {
 
 /* WORKS */
 
-.takanorip-works {
-  /* display: flex;
+/* .takanorip-works {
+  display: flex;
   flex-wrap: wrap;
-  align-items: center; */
-}
+  align-items: center;
+} */
 
 .takanorip-worksItem {
   font-size: var(--h1-font-size);
@@ -392,7 +406,7 @@ summary {
 }
 
 .takanorip-worksLink::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   top: -8px;
@@ -559,7 +573,7 @@ summary {
 }
 
 .takanorip-blogYearsTitle {
-  font-size: var(--h2-font-size);
+  font-size: var(--h3-font-size);
   margin-bottom: var(--spacing-1);
 }
 
@@ -582,30 +596,20 @@ summary {
 }
 
 .takanorip-blogYear {
-  font-size: var(--h2-font-size);
+  font-size: var(--h3-font-size);
   margin-bottom: var(--spacing-3);
 }
 
 .takanorip-blogIndex {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-13);
-}
-
-.takanorip-blogTagList::before {
-  content: '[';
-  margin-right: var(--spacing-0);
-}
-
-.takanorip-blogTagList::after {
-  content: ']';
-  margin-left: var(--spacing-0);
+  gap: var(--spacing-8);
 }
 
 .takanorip-blogList {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-5);
+  gap: var(--spacing-3);
 }
 
 .takanorip-blogListInfo {
@@ -613,14 +617,13 @@ summary {
 }
 
 .takanorip-blogListLink {
-  font-size: var(--h3-font-size);
+  font-size: var(--h4-font-size);
   margin-bottom: var(--spacing-1);
   color: var(--color-link);
-  text-decoration: underline;
 }
 
 .takanorip-blogListLink:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .takanorip-blogTagsTitle {
@@ -629,8 +632,7 @@ summary {
 }
 
 .takanorip-blogTitle {
-  font-size: var(--h1-font-size);
-  color: var(--color-primary1);
+  font-size: var(--h2-font-size);
 }
 
 .takanorip-blogHead {
@@ -639,7 +641,8 @@ summary {
 
 .takanorip-blogInfo {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: var(--spacing-1);
   margin-bottom: var(--spacing-8);
   font-family: var(--code-font-family);
 }
@@ -649,25 +652,20 @@ summary {
   margin-right: var(--spacing-1);
 }
 
-.takanorip-blogTag {
-  display: flex;
-}
-
 .takanorip-blogTagList {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
   align-items: center;
+  gap: var(--spacing-1);
 }
 
-.takanorip-blogTagItem:not(:last-child)::after {
-  content: ',';
-  padding-right: var(--spacing-1);
-}
-
-.takanorip-blogDate {
-  display: flex;
-  margin-right: var(--spacing-2);
+.takanorip-blogTagLink {
+  display: block;
+  padding: var(--spacing-0) var(--spacing-1_5);
+  border-radius: 4px;
+  background-color: var(--color-blog-lightGray);
+  font-size: var(--body-small-font-size);
 }
 
 .takanorip-blogDateTitle {
@@ -680,7 +678,7 @@ summary {
 }
 
 .takanorip-blogBoby p {
-  margin-bottom: var(--spacing-3);
+  margin: 1.8rem 0;
 }
 
 .takanorip-blogBoby p,
@@ -689,25 +687,19 @@ summary {
   line-height: 1.8;
 }
 
-.takanorip-blogBoby h1,
-.takanorip-blogBoby h2,
-.takanorip-blogBoby h3 {
-  margin-bottom: var(--spacing-3);
-}
-
 .takanorip-blogBoby h1 {
   margin-top: var(--spacing-8);
   font-size: var(--h1-font-size);
 }
 
 .takanorip-blogBoby h2 {
-  margin-top: var(--spacing-8);
-  font-size: var(--h2-font-size);
+  margin-top: 5.4rem;
+  font-size: var(--h3-font-size);
 }
 
 .takanorip-blogBoby h3 {
-  margin-top: var(--spacing-5);
-  font-size: var(--h3-font-size);
+  margin-top: 3.6rem;
+  font-size: var(--h4-font-size);
 }
 
 .takanorip-blogFooter {
@@ -755,7 +747,7 @@ summary {
 .bmc-btn {
   min-width: 210px;
   color: #000;
-  background-color: #FFFFFF !important;
+  background-color: #ffffff !important;
   height: 60px;
   border-radius: 12px;
   font-size: 28px;
@@ -766,12 +758,14 @@ summary {
   text-decoration: none !important;
   display: inline-flex !important;
   align-items: center;
-  font-family: 'Cookie', cursive !important;
+  font-family: "Cookie", cursive !important;
   -webkit-box-sizing: border-box !important;
   box-sizing: border-box !important;
 }
 
-.bmc-btn:hover, .bmc-btn:active, .bmc-btn:focus {
+.bmc-btn:hover,
+.bmc-btn:active,
+.bmc-btn:focus {
   text-decoration: none !important;
   cursor: pointer;
 }
@@ -837,7 +831,6 @@ summary {
   }
 
   .takanorip-blogInfo {
-    display: block;
     margin-bottom: var(--spacing-5);
   }
 
@@ -934,7 +927,7 @@ summary {
 }
 
 .takanorip-hitLink {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 
 .takanorip-hitName {

@@ -7,12 +7,11 @@ module.exports = function (eleventyConfig) {
   const iterator = require("markdown-it-for-inline");
   const format = require("date-fns/format");
   const removeMd = require("remove-markdown");
-  const eleventyGoogleFonts = require("eleventy-google-fonts");
   const embedTwitter = require("eleventy-plugin-embed-twitter");
   const { loadDefaultJapaneseParser } = require("budoux");
   const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
-  const _groupBy = require('lodash.groupby');
-  const _uniq = require('lodash.uniq');
+  const _groupBy = require("lodash.groupby");
+  const _uniq = require("lodash.uniq");
 
   const parser = loadDefaultJapaneseParser();
 
@@ -21,20 +20,20 @@ module.exports = function (eleventyConfig) {
     breaks: true,
     linkify: true,
   })
-  .use(markdownItAnchor)
-  .use(markdownItTableOfContents, {
-    includeLevel: [1, 2, 3],
-    containerTag: 'details',
-    containerHeaderHtml:
-      '<summary class="toc-container-header">TOC</summary>',
-  })
-  .use(iterator, "url_new_win", "link_open", (tokens, idx) => {
-    tokens[idx].attrPush(["target", "_blank"]);
-    tokens[idx].attrPush(["rel", "noopener noreferrer"]);
-  })
-  .use(iterator, "lazy_loading", "image", (tokens, idx) => {
-    tokens[idx].attrSet("loading", "lazy");
-  });
+    .use(markdownItAnchor)
+    .use(markdownItTableOfContents, {
+      includeLevel: [1, 2, 3],
+      containerTag: "details",
+      containerHeaderHtml:
+        '<summary class="toc-container-header">TOC</summary>',
+    })
+    .use(iterator, "url_new_win", "link_open", (tokens, idx) => {
+      tokens[idx].attrPush(["target", "_blank"]);
+      tokens[idx].attrPush(["rel", "noopener noreferrer"]);
+    })
+    .use(iterator, "lazy_loading", "image", (tokens, idx) => {
+      tokens[idx].attrSet("loading", "lazy");
+    });
 
   const bodyText = (md) => {
     const text = removeMd(md);
@@ -47,7 +46,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(eleventyGoogleFonts);
   eleventyConfig.addPlugin(embedTwitter, {
     cacheText: true,
   });
@@ -64,23 +62,25 @@ module.exports = function (eleventyConfig) {
         objectID: item.fileSlug,
         url: item.url,
         body: body,
-        excerpt: body.substr(0, 79) + '...',
+        excerpt: body.substr(0, 79) + "...",
         title: item.data.title,
         createdAt: format(item.date, "yyyy-MM-dd"),
       };
     });
   });
-  eleventyConfig.addShortcode("budoux", t => {
+  eleventyConfig.addShortcode("budoux", (t) => {
     return parser.translateHTMLString(t);
   });
   eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.addCollection("postsGroupedByYear", (collection) => {
-    const posts =  collection.getFilteredByTags("blog");
+    const posts = collection.getFilteredByTags("blog");
     return _groupBy(posts, (item) => new Date(item.data.date).getFullYear());
   });
   eleventyConfig.addCollection("postsYears", (collection) => {
-    const posts =  collection.getFilteredByTags("blog");
-    const years = _uniq(posts.map(item => new Date(item.data.date).getFullYear()));
+    const posts = collection.getFilteredByTags("blog");
+    const years = _uniq(
+      posts.map((item) => new Date(item.data.date).getFullYear())
+    );
     const sortedYears = years.sort((a, b) => b - a);
     return sortedYears;
   });
@@ -99,7 +99,6 @@ module.exports = function (eleventyConfig) {
 
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk",
 
     // These are all optional, defaults are shown:
     dir: {
