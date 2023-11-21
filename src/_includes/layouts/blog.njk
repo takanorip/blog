@@ -2,7 +2,7 @@
 layout: layouts/blogBase.njk
 templateClass: blog-content
 ---
-<h2 class="takanorip-blogTitle takanorip-blogHead">{% budoux title %}</h2>
+<h2 class="takanorip-blogTitle takanorip-blogHead">{{ title }}</h2>
 <div class="takanorip-blogInfo">
   <div class="takanorip-blogDate">
     <p class="takanorip-blogDateDate">{{ date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' }) }}</p>
@@ -28,7 +28,9 @@ templateClass: blog-content
     data-size="large"
     rel="noopener noreferrer"
     target="_blank"
-  >Share on Twitter</a>
+  >
+    Share on<span>𝕏</span>
+  </a>
 </div>
 <div class="bmc-btn-container"><a class="bmc-btn" target="_blank" rel="noopener" rel="noreferrer" href="http://buymeacoffee.com/takanorip">
   <svg viewBox="0 0 884 1279" fill="none" xmlns="http://www.w3.org/2000/svg">
