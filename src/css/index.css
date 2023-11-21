@@ -198,7 +198,7 @@ summary {
 
 .takanorip-blogBoby ul,
 .takanorip-blogBoby ol {
-  margin-left: var(--spacing-4);
+  margin-left: var(--spacing-3);
   margin-top: 1.8rem;
   margin-bottom: 1.8rem;
   counter-reset: list;
@@ -206,17 +206,13 @@ summary {
 
 .takanorip-blogBoby li > ul,
 .takanorip-blogBoby li > ol {
-  margin-top: 0.5rem;
+  margin-top: 0.9rem;
   margin-bottom: 0;
   width: 100%;
 }
 
 .takanorip-blogBoby ul > li {
   list-style: disc;
-}
-
-.takanorip-blogBoby ul > li::marker {
-  color: var(--color-blog-darkGray);
 }
 
 .takanorip-blogBoby ol > li {
