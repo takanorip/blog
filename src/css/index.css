@@ -143,6 +143,7 @@ summary {
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
+  justify-content: center;
 }
 
 .takanorip-headerItem {
@@ -699,10 +700,8 @@ summary {
 }
 
 .takanorip-blogFooter {
-  width: var(--content-width);
-  max-width: var(--content-max-width);
-  margin: auto;
-  padding-bottom: var(--spacing-13);
+  width: 100%;
+  margin-top: var(--spacing-13);
 }
 
 .takanorip-footerIcon {
@@ -821,6 +820,11 @@ a.takanorip-twitter {
 
 .logo-coffee {
   fill: #fd0;
+}
+
+.takanorip-footer {
+  padding: var(--spacing-3) 0;
+  border-top: 1px solid var(--color-blog-gray);
 }
 
 @media (max-width: 640px) {
