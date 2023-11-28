@@ -1,6 +1,6 @@
 ---
 title: マッカランが好き
-date: 2023-11-２５
+date: 2023-11-25
 tags:
   - random
   - whisky
