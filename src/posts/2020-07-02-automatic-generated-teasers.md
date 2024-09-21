@@ -18,8 +18,8 @@ layout: layouts/blog.njk
 
 1. タイトルからシェア画像の元になるページを生成
 2. ブログのデータにシェア画像URLをセット
-4. ベースレイアウトでURLをog:imageにセット
-3. 生成元ページのHTMLからPNGを生成
+3. ベースレイアウトでURLをog:imageにセット
+4. 生成元ページのHTMLからPNGを生成
 
 ## 細かい話
 
@@ -47,8 +47,9 @@ layout: layouts/blog.njk
 ```js
 module.exports = {
   eleventyComputed: {
-    ogImageUrl: data => `https://takanorip.com/teasers/${data.page.fileSlug}.png`
-  }
+    ogImageUrl: (data) =>
+      `https://takanorip.com/teasers/${data.page.fileSlug}.png`,
+  },
 };
 ```
 
@@ -57,4 +58,5 @@ module.exports = {
 11tyの[Pagination](https://www.11ty.dev/docs/pagination/)と[Permalink](https://www.11ty.dev/docs/permalinks/)はマジで便利。この2つを使えば任意のデータからページを簡単に出力できる。タグの記事一覧もこれらの機能を使って実装されてる。
 
 ## 感想
+
 意外とかんたんだった。だいぶ11tyを理解してきた気がする。

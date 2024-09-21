@@ -19,7 +19,7 @@ CSS の font-face を定義し操作すること、それらのロード状況�
 IE と Microsoft Edge 以外のブラウザで動作します。
 
 [**Can I use... Support tables for HTML5, CSS3, etc**  
-_"Can I use" provides up-to-date browser support tables for support of front-end web technologies on desktop and mobile…_caniuse.com](https://caniuse.com/#feat=font-loading "https://caniuse.com/#feat=font-loading")[](https://caniuse.com/#feat=font-loading)
+\_"Can I use" provides up-to-date browser support tables for support of front-end web technologies on desktop and mobile…\_caniuse.com](https://caniuse.com/#feat=font-loading "https://caniuse.com/#feat=font-loading")[](https://caniuse.com/#feat=font-loading)
 
 ### 使い方
 
@@ -38,4 +38,4 @@ Google Fonts はユニコードサブセットをしており、ユニコード�
 サービスによっては制御用のAPIを公開しているのでそちらを利用するのが良いと思います。（例：Typesquare）
 
 [**API References | TypeSquare**  
-_URL tag options enable you to change actions during loading a web font by adding parameters to typesquare.js which is a…_typesquare.com](https://typesquare.com/service/api_reference "https://typesquare.com/service/api_reference")[](https://typesquare.com/service/api_reference)
+\_URL tag options enable you to change actions during loading a web font by adding parameters to typesquare.js which is a…\_typesquare.com](https://typesquare.com/service/api_reference "https://typesquare.com/service/api_reference")[](https://typesquare.com/service/api_reference)

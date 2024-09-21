@@ -13,22 +13,22 @@ layout: layouts/blog.njk
 これは FOLIO Advent Calendar 2018 10日目の記事です。
 
 [**FOLIO Advent Calendar 2018 - Adventar**  
-_株式会社FOLIOのメンバーによるアドベントカレンダーです！ FOLIO Advent Calendar 2017: https://qiita.com/advent-calendar/2017/folio-sec…_adventar.org](https://adventar.org/calendars/3424 "https://adventar.org/calendars/3424")[](https://adventar.org/calendars/3424)
+\_株式会社FOLIOのメンバーによるアドベントカレンダーです！ FOLIO Advent Calendar 2017: https://qiita.com/advent-calendar/2017/folio-sec…\_adventar.org](https://adventar.org/calendars/3424 "https://adventar.org/calendars/3424")[](https://adventar.org/calendars/3424)
 
 ## Apollo Client
 
 GraphQLサーバーと通信するためのクライアントサイドライブラリです。
 
 [**Introduction | Apollo Client**  
-_What is Apollo Client and what does it do?_www.apollographql.com](https://www.apollographql.com/docs/react/ "https://www.apollographql.com/docs/react/")[](https://www.apollographql.com/docs/react/)
+\_What is Apollo Client and what does it do?\_www.apollographql.com](https://www.apollographql.com/docs/react/ "https://www.apollographql.com/docs/react/")[](https://www.apollographql.com/docs/react/)
 
 GraphQLって何？って人は公式ドキュメントとかを読むと良いと思います。
 
 [**GraphQL: A query language for APIs.**  
-_GraphQL provides a complete description of the data in your API, gives clients the power to ask for exactly what they…_graphql.org](https://graphql.org/learn/ "https://graphql.org/learn/")[](https://graphql.org/learn/)
+\_GraphQL provides a complete description of the data in your API, gives clients the power to ask for exactly what they…\_graphql.org](https://graphql.org/learn/ "https://graphql.org/learn/")[](https://graphql.org/learn/)
 
 [**GraphQL入門 - 使いたくなるGraphQL - Qiita**  
-_本記事は Livesense Advent Calendar 2016 - Qiita の24日目の記事になります。…_qiita.com](https://qiita.com/bananaumai/items/3eb77a67102f53e8a1ad "https://qiita.com/bananaumai/items/3eb77a67102f53e8a1ad")[](https://qiita.com/bananaumai/items/3eb77a67102f53e8a1ad)
+\_本記事は Livesense Advent Calendar 2016 - Qiita の24日目の記事になります。…\_qiita.com](https://qiita.com/bananaumai/items/3eb77a67102f53e8a1ad "https://qiita.com/bananaumai/items/3eb77a67102f53e8a1ad")[](https://qiita.com/bananaumai/items/3eb77a67102f53e8a1ad)
 
 ReactでApollo Client( [react-apollo](https://www.apollographql.com/docs/react/) )を使用すると次のように書けます。
 
@@ -38,8 +38,8 @@ ReactでApollo Client( [react-apollo](https://www.apollographql.com/docs/react/)
 
 Apollo Client を使用してSSR するにはサーバー側で次の2つの処理を行います。これはReduxを使用してSSRするときとおおよそ同じです。
 
--   サーバーサイドでAPIにアクセスしStoreを共有する
--   サーバーサイドでHTMLを生成する
+- サーバーサイドでAPIにアクセスしStoreを共有する
+- サーバーサイドでHTMLを生成する
 
 ## Store rehydration
 
@@ -101,4 +101,4 @@ FOLIOでもBFFにGraphQLを採用するかどうか検討中なのですが、St
 
 このあたりは個人でも試していきたいです。
 
-明日は [sion\_cojp](https://adventar.org/users/19752) さんの記事です。
+明日は [sion_cojp](https://adventar.org/users/19752) さんの記事です。

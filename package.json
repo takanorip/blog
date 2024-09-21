@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx @11ty/eleventy --input=src --serve",
-    "save-algolia": "node scripts/algoliaIndex.js",
+    "save-algolia": "node --env-file=.env -r ts-node/register scripts/algoliaIndex.ts",
     "build": "eleventy --input=src && npm run save-algolia",
+    "scaffold": "ts-node scripts/scaffold.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,19 +27,22 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11ty/eleventy-upgrade-help": "^2.0.5",
     "@takanorip/markdown-it-table-of-contents": "^0.5.2",
-    "algoliasearch": "^4.20.0",
-    "budoux": "^0.6.1",
+    "algoliasearch": "^5.5.3",
+    "budoux": "^0.6.2",
     "date-fns": "^2.30.0",
-    "eleventy-plugin-embed-twitter": "^1.4.0",
+    "eleventy-plugin-embed-twitter": "^1.4.1",
     "lodash.groupby": "^4.6.0",
     "lodash.orderby": "^4.6.0",
     "lodash.uniq": "^4.5.0",
-    "markdown-it-anchor": "^8.6.7",
-    "markdown-it-for-inline": "^0.1.1",
-    "node-html-to-image": "^4.0.0",
-    "remove-markdown": "^0.5.0"
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-for-inline": "^2.0.1",
+    "minimist": "^1.2.8",
+    "node-html-to-image": "^5.0.0",
+    "remove-markdown": "^0.5.5",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "prettier": "^3.1.0"
+    "@types/minimist": "^1.2.5",
+    "prettier": "^3.3.3"
   }
 }
