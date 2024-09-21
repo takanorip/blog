@@ -13,6 +13,7 @@ layout: layouts/blog.njk
 個人名刺を新調したので、いろいろまとめておく。
 
 ## デザイン
+
 デザインはFigmaでやった。
 やったことは以前ブログにまとめたことと同じ。
 https://blog.takanorip.com/posts/2019-11-11_Figma-----------------6a72c4e9498c/
@@ -24,6 +25,7 @@ https://blog.takanorip.com/posts/2019-11-11_Figma-----------------6a72c4e9498c/
 https://www.figma.com/file/pK9qPupUKNmEaF3TiD0Gzt/takanorip-design?node-id=1%3A3
 
 ## 印刷
+
 今回は箔押し印刷をしたかったのでPDFや画像で入稿できる印刷所を探していた。（だいたい箔押しはAIファイルで入稿しないといけない。）
 いろいろ比較検討した結果、今回は[あさだ屋](https://haku-asadaya.com/)さんに発注した。
 ガイドに書いてあるが、あさだ屋さんはJPEGでの入稿ができるので、とっても楽だった。Figmaユーザーに優しい。

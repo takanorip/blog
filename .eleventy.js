@@ -58,13 +58,16 @@ module.exports = function (eleventyConfig) {
     return collection.getFilteredByTags("blog").map((item) => {
       const body = bodyText(item.template.frontMatter.content);
       return {
-        id: item.fileSlug,
-        objectID: item.fileSlug,
-        url: item.url,
-        body: body,
-        excerpt: body.substr(0, 79) + "...",
-        title: item.data.title,
-        createdAt: format(item.date, "yyyy-MM-dd"),
+        action: "partialUpdateObject",
+        body: {
+          id: item.fileSlug,
+          objectID: item.fileSlug,
+          url: item.url,
+          body: body,
+          excerpt: body.substring(0, 79) + "...",
+          title: item.data.title,
+          createdAt: format(item.date, "yyyy-MM-dd"),
+        },
       };
     });
   });
@@ -79,7 +82,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("postsYears", (collection) => {
     const posts = collection.getFilteredByTags("blog");
     const years = _uniq(
-      posts.map((item) => new Date(item.data.date).getFullYear())
+      posts.map((item) => new Date(item.data.date).getFullYear()),
     );
     const sortedYears = years.sort((a, b) => b - a);
     return sortedYears;

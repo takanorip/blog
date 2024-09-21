@@ -3,7 +3,8 @@ const search = instantsearch({
   searchClient: algoliasearch("T3J60MBUA8", "8f49853dd7e9830263fdea7ff69497ee"),
 });
 
-const { configure, searchBox, poweredBy, hits, pagination } = instantsearch.widgets
+const { configure, searchBox, poweredBy, hits, pagination } =
+  instantsearch.widgets;
 
 search.addWidgets([
   configure({

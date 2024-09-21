@@ -8,17 +8,20 @@ layout: layouts/blog.njk
 ---
 
 ### 9月20日（月）
+
 敬老の日。
 家でゴロゴロした。
 先週打ったワクチンの副反応がまだ残っていたのか、すごく頭が痛かった。
 DEATHLOOPというゲームを買ってやっていたんだが、これが思いの外面白かった。
 
 ### 9月21日（火）
+
 一日なにもせず過ごした。
 seyaさんとすごく久しぶりに話をした。
 キャリアと言うかやりたいことが近そうだなと勝手に思っていたので、いろいろお話できて楽しかった。
 
 ### 9月22日（水）
+
 心療内科に行き適応障害だと診断された。
 しばらく休職することになった。
 いろいろ考えてたけど、とりあえず全部忘れることにした。
@@ -27,6 +30,7 @@ seyaさんとすごく久しぶりに話をした。
 模擬面接をする試みはすごく良いと思ったので、これを機に広まると良さそう。
 
 ### 9月23日（木）
+
 赤レンガ倉庫に散歩しに行った。
 途中で象の鼻パークのカフェでソフトクリームを食べた。
 大さん橋に飛鳥Ⅱが停泊してて、きれいだった。
@@ -35,6 +39,7 @@ seyaさんとすごく久しぶりに話をした。
 ![](https://lh3.googleusercontent.com/XUOGVihkDNht75qJevMWYo-YxXOBLH_BQZTvgmtvq3CjHDRzNql0qdqaPCz3GmrFCWcewTj5Ckc4VHfIYaEvrCB3tQnYzmHQM2BrjUwKUYWqV_3VYR-gWKeFWI3O-CacXYr-Dy_uLrH62Ng816z15zXhDNSDufR7mCVSOleU3ZnRxU4QkQsCHOY8mtBfcnku_2G2sIuvUB1pqgWkACJPid20s-imSoFBrpCm5Fu7XccHJ1skI0T5kVGvnOIspYE2N1A2-6JVdBtsc8L9Fk3zACPFGCKoe75-3A06XnlRctY3VTNp7vzyNSokQtvHEPTy8MyhTpgMrp7QTpkfsbh88Quikru-IVx5XsDh8TOkY9F9kV-SqvI-S5HFiMGV7SBBYlXREbh2zf7yeCn_tqsE8vAEFS_7hZEKiGgkcK9uhe6nOlyFsdRKd-AHlZUbVuh1sjDzoFh0O6bsqTvC3pnD948CEsEvEIPKmzl2-jIk1_kBF1PNGUG8DX_ss0n6TbnUCFkVDsKs0I35V9ElDSjGRor-Q8BMsVooewc4JRD0m99mQY4H1P81GYQp5IqBvOzmctGEPnC2TXk8QDQu8WnUZe1ZT9m7kG81mzQL2BcL4-3zkkhmDxOpL-co4-g6DHleMihp9kNv9EuDmKpB8AJ2Z-MAxP1H2oOyc3jsgNsTBSpw9tvgnO6mLNmrjfbF4rJzjdoyFgfNU9Jc3ncGaPYqALA=w2294-h1291-no?authuser=0)
 
 ### 9月24日（金）
+
 久しぶりにサイゼリヤに行った。
 サイゼリヤはキャッシュレス決済ができるようになり死角がなくなった。
 辛味チキンの本数が減っていて、最近の様々なものの価格高騰について思いを馳せるなどした。
@@ -42,6 +47,7 @@ seyaさんとすごく久しぶりに話をした。
 処方された漢方薬がセロリ味でまじで吐きそうだったが、もっと変な味の薬を出されても困るので我慢して飲むことにしよう。
 
 ### 9月25日（土）
+
 Podcastの編集作業をした後にコメダ珈琲に行きコメ牛を食べた。
 うまかった。
 コメダのサイズ感は何回行っても慣れない。
@@ -49,6 +55,7 @@ Podcastの編集作業をした後にコメダ珈琲に行きコメ牛を食べ�
 ![](https://lh3.googleusercontent.com/KX5WX6l56L49n0OhNJC98aP3BzRw-wOrYgDodrknE6B4jzAn_yEzPhVQfouWtZjxuxTjgUw5N0fK7ITT71n8ZgBPWOPm3AVU5016ki5NWAsYo4oiTLStQs4_j0aG9Khs22m3XxrsnRWl0uUNZCm0cNCFPh_-C85YwPGxvqmx5UPnEkkzda7YIuPyKNCe7K3cO4gIZcI0OvDoYp8snYw1cLKjxU_pS75AXTQCbGXh6pv1fYV5s1SA76GHgH3vI2TJjdajm5HOELk5KxRFnPP0ZOLlrtZUT5AxL3JZnesmc7ncBvOYdyvtHZ1a62MS4jkvOC_lZ680fwz51Kgoi6rCWtGtee8rWU1kZfhHJ8Vk61r1pHfHdiQXFqZJIkhM76IpU3WKoKlhMX29joU2TbMgelUeScWIs4om0WDtNilabQ5vYgLjkomEwdaZWVmtOFO6sl4f8asOwmcY7_x9QftUmRo7cM7R4zVsYSwxhMH0XGGzSu6xiU-LV3yi08q8qUDk4Ufc5ZM481JbWabvJcuRW3NEp42Dgez5xzVv1H_1OBCcA5LoqF0507uJ0OnUhvqwpwydmM01pQ1ZOXdQmNA32KW3382S2nbzaAGgpqMBCUhW-hatACOF2_Zhlu4kJD4fubcBtGmdU6lVX9q2Ch-HjjDgceukC0hyXKl9PEFOFch-sh_YNJXxcDAOVtWQss_JXML5oUcb2WsOohuS2GYl48o=w2294-h1291-no?authuser=0)
 
 ### 9月26日（日）
+
 職務経歴書を書いた。
 今まできちんと書いたことがなかったので疲れた。
 すこし休んだおかげか、文章を書いたり読んだりするのがちょっとできるようになってきた。

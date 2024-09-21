@@ -31,7 +31,7 @@ Suchmosの曲はどれもおしゃれでかっこいいけど、これはちょ�
 > だけどそんなもん慣れっこでお決まり  
 > 君は僕のBUDDY
 
-[https://www.youtube.com/embed/b3\_ax\_7\_3JQ?feature=oembed](https://www.youtube.com/embed/b3_ax_7_3JQ?feature=oembed)
+[https://www.youtube.com/embed/b3_ax_7_3JQ?feature=oembed](https://www.youtube.com/embed/b3_ax_7_3JQ?feature=oembed)
 
 ### サカナクション / mellow
 
