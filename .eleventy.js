@@ -1,45 +1,44 @@
-module.exports = function (eleventyConfig) {
-  const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-  const pluginRss = require("@11ty/eleventy-plugin-rss");
-  const markdownIt = require("markdown-it");
-  const markdownItAnchor = require("markdown-it-anchor");
-  const markdownItTableOfContents = require("@takanorip/markdown-it-table-of-contents");
-  const iterator = require("markdown-it-for-inline");
-  const format = require("date-fns/format");
-  const removeMd = require("remove-markdown");
-  const embedTwitter = require("eleventy-plugin-embed-twitter");
-  const { loadDefaultJapaneseParser } = require("budoux");
-  const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
-  const _groupBy = require("lodash.groupby");
-  const _uniq = require("lodash.uniq");
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItTableOfContents from "@takanorip/markdown-it-table-of-contents";
+import iterator from "markdown-it-for-inline";
+import { format } from "date-fns";
+import removeMd from "remove-markdown";
+import embedTwitter from "eleventy-plugin-embed-twitter";
+import { loadDefaultJapaneseParser } from "budoux";
+import UpgradeHelper from "@11ty/eleventy-upgrade-help";
+import _groupBy from "lodash.groupby";
+import _uniq from "lodash.uniq";
 
-  const parser = loadDefaultJapaneseParser();
+const parser = loadDefaultJapaneseParser();
 
-  const markdownLib = markdownIt({
-    html: true,
-    breaks: true,
-    linkify: true,
+const markdownLib = markdownIt({
+  html: true,
+  breaks: true,
+  linkify: true,
+})
+  .use(markdownItAnchor)
+  .use(markdownItTableOfContents, {
+    includeLevel: [1, 2, 3],
+    containerTag: "details",
+    containerHeaderHtml: '<summary class="toc-container-header">TOC</summary>',
   })
-    .use(markdownItAnchor)
-    .use(markdownItTableOfContents, {
-      includeLevel: [1, 2, 3],
-      containerTag: "details",
-      containerHeaderHtml:
-        '<summary class="toc-container-header">TOC</summary>',
-    })
-    .use(iterator, "url_new_win", "link_open", (tokens, idx) => {
-      tokens[idx].attrPush(["target", "_blank"]);
-      tokens[idx].attrPush(["rel", "noopener noreferrer"]);
-    })
-    .use(iterator, "lazy_loading", "image", (tokens, idx) => {
-      tokens[idx].attrSet("loading", "lazy");
-    });
+  .use(iterator, "url_new_win", "link_open", (tokens, idx) => {
+    tokens[idx].attrPush(["target", "_blank"]);
+    tokens[idx].attrPush(["rel", "noopener noreferrer"]);
+  })
+  .use(iterator, "lazy_loading", "image", (tokens, idx) => {
+    tokens[idx].attrSet("loading", "lazy");
+  });
 
-  const bodyText = (md) => {
-    const text = removeMd(md);
-    return text.replace(/\[\[toc\]\]/g, "").replace(/\r?\n/g, "");
-  };
+const bodyText = (md) => {
+  const text = removeMd(md);
+  return text.replace(/\[\[toc\]\]/g, "").replace(/\r?\n/g, "");
+};
 
+export default function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("blog", "layouts/blog.njk");
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/css");
@@ -54,9 +53,11 @@ module.exports = function (eleventyConfig) {
     return value instanceof Date ? format(value, "yyyy-MM-dd") : "";
   });
   eleventyConfig.setLibrary("md", markdownLib);
-  eleventyConfig.addCollection("algolia", (collection) => {
-    return collection.getFilteredByTags("blog").map((item) => {
-      const body = bodyText(item.template.frontMatter.content);
+  eleventyConfig.addCollection("algolia", async (collection) => {
+    const blog = collection.getFilteredByTags("blog");
+    const result = await Promise.all(blog.map(async (item) => {
+      const frontMatter = await item.template.read();
+      const body = bodyText(frontMatter.content);
       return {
         action: "partialUpdateObject",
         body: {
@@ -69,7 +70,8 @@ module.exports = function (eleventyConfig) {
           createdAt: format(item.date, "yyyy-MM-dd"),
         },
       };
-    });
+    }))
+    return result;
   });
   eleventyConfig.addShortcode("budoux", (t) => {
     return parser.translateHTMLString(t);
@@ -90,20 +92,8 @@ module.exports = function (eleventyConfig) {
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
-
-    // If your site lives in a different subdirectory, change this.
-    // Leading or trailing slashes are all normalized away, so don’t worry about those.
-
-    // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
-    // This is only used for link URLs (it does not affect your file structure)
-    // You can also pass this in on the command line using `--pathprefix`
-
-    // pathPrefix: "/",
-
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "njk",
-
-    // These are all optional, defaults are shown:
     dir: {
       input: "src",
       includes: "_includes",
@@ -111,4 +101,4 @@ module.exports = function (eleventyConfig) {
       output: "_site",
     },
   };
-};
+}

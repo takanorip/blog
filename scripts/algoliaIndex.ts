@@ -1,4 +1,5 @@
-import { BatchWriteParams, searchClient } from "algoliasearch";
+import type { BatchWriteParams } from "algoliasearch";
+import { searchClient } from "@algolia/client-search";
 import contactsJSON from "../_site/index.json";
 
 (async function () {

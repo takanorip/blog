@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "npx @11ty/eleventy --input=src --serve",
-    "save-algolia": "ts-node scripts/algoliaIndex.ts",
+    "save-algolia": "tsx scripts/algoliaIndex.ts",
     "build": "eleventy --input=src && npm run save-algolia",
-    "scaffold": "ts-node scripts/scaffold.ts",
+    "scaffold": "tsx scripts/scaffold.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,14 +23,14 @@
   },
   "homepage": "https://github.com/takanorip/portfolio-version3#readme",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@11ty/eleventy-upgrade-help": "^2.0.5",
+    "@11ty/eleventy-upgrade-help": "^3.0.1",
     "@takanorip/markdown-it-table-of-contents": "^0.5.2",
-    "algoliasearch": "^5.5.3",
+    "algoliasearch": "^5.7.0",
     "budoux": "^0.6.2",
-    "date-fns": "^2.30.0",
+    "date-fns": "^4.1.0",
     "eleventy-plugin-embed-twitter": "^1.4.1",
     "lodash.groupby": "^4.6.0",
     "lodash.orderby": "^4.6.0",
@@ -39,7 +40,7 @@
     "minimist": "^1.2.8",
     "node-html-to-image": "^5.0.0",
     "remove-markdown": "^0.5.5",
-    "ts-node": "^10.9.2"
+    "tsx": "^4.19.1"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.5",

@@ -8,19 +8,19 @@ eleventyExcludeFromCollections: true
   <subtitle>{{ metadata.description }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.blog | rssLastUpdatedDate }}</updated>
+  <updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
   </author>
   {%- for blog in collections.blog %}
-  {% set absolutePostUrl %}{{ blog.url | url | absoluteUrl(metadata.url_blog) }}{% endset %}
+  {% set absolutePostUrl %}{{ blog.url | htmlBaseUrl(metadata.url) }}{% endset %}
   <entry>
     <title>{{ blog.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ blog.date | rssDate }}</updated>
+    <updated>{{ blog.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
-    <content type="html">{{ blog.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    <content type="html">{{ blog.content | renderTransforms(blog.data.page, metadata.url) }}</content>
   </entry>
   {%- endfor %}
 </feed>
