@@ -31,7 +31,7 @@ templateClass: blog-content
   </div>
   <div class="takanorip-bottomButtonArea">
     {% set tweetText = title + ' - takanorip blog https://blog.takanorip.com' + page.url %}
-    {% set tweetUrl %}https://twitter.com/intent/tweet?text={{ tweetText | urlencode }}{% endset %}
+    {% set tweetUrl %}https://x.com/intent/post?text={{ tweetText | urlencode }}{% endset %}
     <a
       class="takanorip-twitter"
       href="{{ tweetUrl }}"
