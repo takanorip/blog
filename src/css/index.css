@@ -754,6 +754,10 @@ summary {
   width: 100%;
 }
 
+.giscus {
+  padding-top: var(--spacing-8);
+}
+
 a.takanorip-twitter {
   display: flex;
   align-items: center;

@@ -23,15 +23,15 @@
   },
   "homepage": "https://github.com/takanorip/portfolio-version3#readme",
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-rss": "^2.0.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@11ty/eleventy-upgrade-help": "^3.0.1",
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@11ty/eleventy-upgrade-help": "^3.0.2",
     "@takanorip/markdown-it-table-of-contents": "^0.5.2",
-    "algoliasearch": "^5.7.0",
-    "budoux": "^0.6.2",
+    "algoliasearch": "^5.47.0",
+    "budoux": "^0.7.0",
     "date-fns": "^4.1.0",
-    "eleventy-plugin-embed-twitter": "^1.4.1",
+    "eleventy-plugin-embed-twitter": "^1.4.3",
     "lodash.groupby": "^4.6.0",
     "lodash.orderby": "^4.6.0",
     "lodash.uniq": "^4.5.0",
@@ -39,11 +39,11 @@
     "markdown-it-for-inline": "^2.0.1",
     "minimist": "^1.2.8",
     "node-html-to-image": "^5.0.0",
-    "remove-markdown": "^0.5.5",
-    "tsx": "^4.19.1"
+    "remove-markdown": "^0.6.3",
+    "tsx": "^4.21.0"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.5",
-    "prettier": "^3.3.3"
+    "prettier": "^3.8.1"
   }
 }
