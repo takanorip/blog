@@ -7,12 +7,9 @@ import iterator from "markdown-it-for-inline";
 import { format } from "date-fns";
 import removeMd from "remove-markdown";
 import embedTwitter from "eleventy-plugin-embed-twitter";
-import { loadDefaultJapaneseParser } from "budoux";
 import UpgradeHelper from "@11ty/eleventy-upgrade-help";
 import _groupBy from "lodash.groupby";
 import _uniq from "lodash.uniq";
-
-const parser = loadDefaultJapaneseParser();
 
 const markdownLib = markdownIt({
   html: true,
@@ -72,9 +69,6 @@ export default function (eleventyConfig) {
       };
     }))
     return result;
-  });
-  eleventyConfig.addShortcode("budoux", (t) => {
-    return parser.translateHTMLString(t);
   });
   eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.addCollection("postsGroupedByYear", (collection) => {

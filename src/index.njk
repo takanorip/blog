@@ -19,7 +19,7 @@ templateClass: blog-list-content
       {%- for post in collections.postsGroupedByYear[year] | reverse -%}
       <li class="takanorip-blogListItem">
         <a class="takanorip-blogListLink" href="{{ post.url }}">
-          {% budoux post.data.title %}
+          {{ post.data.title }}
         </a>
         <div class="takanorip-blogListInfo">
           <p class="takanorip-blogListDate">
