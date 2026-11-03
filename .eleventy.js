@@ -46,6 +46,11 @@ export default function (eleventyConfig) {
     cacheText: true,
   });
   eleventyConfig.setDataDeepMerge(true);
+  eleventyConfig.addPreprocessor("drafts", "*", (data) => {
+    if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+      return false;
+    }
+  });
   eleventyConfig.addNunjucksFilter("dateFormat", (value) => {
     return value instanceof Date ? format(value, "yyyy-MM-dd") : "";
   });
