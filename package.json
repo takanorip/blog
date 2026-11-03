@@ -68,6 +68,7 @@
   },
   "allowScripts": {
     "esbuild": true,
+    "@parcel/watcher": false,
     "puppeteer": false
   }
 }

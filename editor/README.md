@@ -4,7 +4,9 @@
 
 - GitHub OAuth でログインし、`ALLOWED_GITHUB_LOGIN` に設定したユーザーだけが使える
 - 記事の新規作成とファイル名（= URL `/posts/<ファイル名>/`）の変更ができる（リネームは 1 コミットで行う）
-- プレーンな textarea で front matter ごと編集し、ブログと同じ CSS でプレビューできる
+- プレーンな textarea で front matter ごと編集し、「編集」「プレビュー」をタブで切り替える（PC でもスマホでも同じ）
+- プレビューは記事ページ（`layouts/blog.njk`）と同じ HTML 構造・同じコードハイライト出力を組み立て、公開中の `/css/index.css` と `/css/prism.css` をそのまま読み込む。`.eleventy.js` の markdown-it 設定を変えたら `editor/client/markdown.ts` も合わせる
+- 画面は React と [Kumo](https://kumo-ui.com/) で作っていて、ダークモードは OS の設定に従う（ブログと同じ）
 - 下書きは front matter の `draft: true`。下書きのまま保存したコミットには `[skip ci]` が付くので、Cloudflare Pages のビルドは走らない
 - 「公開する」で `draft: true` を外してコミットし、サイトを再ビルドする。「下書きに戻す」で非公開にできる
 - 保存前の編集内容はブラウザの localStorage に退避していて、リロードや再ログインの後でも復元できる
@@ -14,7 +16,7 @@
 
 | パス | 内容 |
 | --- | --- |
-| `editor/client/` | エディタの画面（ビルドすると `_site/admin/` に出力） |
+| `editor/client/` | エディタの画面（React + Kumo。esbuild と Tailwind CSS でビルドして `_site/admin/` に出力） |
 | `editor/server/` | Hono で書いた API（認証と GitHub API の呼び出し） |
 | `editor/shared/` | client と server の両方で使う front matter 処理 |
 | `functions/admin/api/[[route]].ts` | Cloudflare Pages Functions のエントリーポイント |
