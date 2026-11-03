@@ -32,7 +32,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@11ty/eleventy-upgrade-help": "^3.0.2",
     "@takanorip/markdown-it-table-of-contents": "^0.5.2",
-    "algoliasearch": "^5.47.0",
+    "algoliasearch": "^5.61.0",
     "date-fns": "^4.1.0",
     "eleventy-plugin-embed-twitter": "^1.4.3",
     "hono": "^4.13.16",
