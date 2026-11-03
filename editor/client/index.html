@@ -13,10 +13,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/admin/manifest.webmanifest" />
+    <script>
+      // The blog follows the OS color scheme, so the editor (and its preview) does too.
+      (() => {
+        const dark = matchMedia("(prefers-color-scheme: dark)");
+        const apply = () => document.documentElement.setAttribute("data-mode", dark.matches ? "dark" : "light");
+        apply();
+        dark.addEventListener("change", apply);
+      })();
+    </script>
     <link rel="stylesheet" href="/admin/app.css" />
     <script type="module" src="/admin/app.js"></script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app" class="isolate"></div>
   </body>
 </html>

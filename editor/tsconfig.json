@@ -5,11 +5,12 @@
     "moduleResolution": "bundler",
     "lib": ["es2022", "dom", "dom.iterable"],
     "types": ["node"],
+    "jsx": "react-jsx",
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowImportingTsExtensions": false
   },
-  "include": ["./**/*.ts", "../functions/**/*.ts"]
+  "include": ["./**/*.ts", "./**/*.tsx", "../functions/**/*.ts"]
 }
