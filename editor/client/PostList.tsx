@@ -57,17 +57,19 @@ export function PostList({ me, onLogout }: Props) {
 
   return (
     <div className="flex min-h-full flex-col">
-      <header className="sticky top-0 z-10 flex items-center gap-2 border-b border-kumo-hairline bg-kumo-base px-4 py-2">
-        <a href="#/" className="font-semibold text-kumo-default no-underline">
-          Blog Editor
-        </a>
-        <span className="flex-1" />
-        <Text variant="secondary" size="sm">
-          {me.login}
-        </Text>
-        <Button variant="ghost" size="sm" icon={SignOutIcon} onClick={onLogout}>
-          ログアウト
-        </Button>
+      <header className="sticky top-0 z-10 border-b border-kumo-hairline bg-kumo-base">
+        <div className="mx-auto flex w-full max-w-3xl items-center gap-2 px-4 py-2">
+          <a href="#/" className="font-semibold text-kumo-default no-underline">
+            Blog Editor
+          </a>
+          <span className="flex-1" />
+          <Text variant="secondary" size="sm">
+            {me.login}
+          </Text>
+          <Button variant="ghost" size="sm" icon={SignOutIcon} onClick={onLogout}>
+            ログアウト
+          </Button>
+        </div>
       </header>
 
       <main className="mx-auto flex w-full max-w-3xl flex-col gap-3 p-4">

@@ -84,9 +84,11 @@ export function Editor(props: EditorProps) {
   if (failed) {
     return (
       <div className="flex h-full flex-col">
-        <EditorBar>
-          <BackButton />
-        </EditorBar>
+        <header className={`${columnClass} bg-kumo-base`}>
+          <EditorBar>
+            <BackButton />
+          </EditorBar>
+        </header>
         <Empty
           className="mt-16"
           icon={<FileXIcon size={32} />}
@@ -99,9 +101,11 @@ export function Editor(props: EditorProps) {
   if (!initial) {
     return (
       <div className="flex h-full flex-col">
-        <EditorBar>
-          <BackButton />
-        </EditorBar>
+        <header className={`${columnClass} bg-kumo-base`}>
+          <EditorBar>
+            <BackButton />
+          </EditorBar>
+        </header>
         <div className="flex flex-1 items-center justify-center">
           <Loader size={24} />
         </div>
@@ -111,10 +115,12 @@ export function Editor(props: EditorProps) {
   return <EditorView {...props} initial={initial} />;
 }
 
+// The header and the writing column share this width. 48rem is Tailwind's max-w-3xl.
+const columnClass =
+  "mx-auto w-full max-w-3xl px-[max(1.25rem,env(safe-area-inset-left))]";
+
 function EditorBar({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex min-w-0 items-center gap-2 px-2 py-2 sm:px-4">{children}</div>
-  );
+  return <div className="flex min-w-0 items-center gap-2 py-2">{children}</div>;
 }
 
 function BackButton() {
@@ -324,7 +330,7 @@ function EditorView({
 
   return (
     <div className="flex h-full flex-col">
-      <header className="border-b border-kumo-hairline bg-kumo-base">
+      <header className={`${columnClass} border-b border-kumo-hairline bg-kumo-base`}>
         <EditorBar>
           <BackButton />
           <InputGroup size="sm" className="min-w-0 flex-1">
@@ -367,7 +373,7 @@ function EditorView({
             </LinkButton>
           )}
         </EditorBar>
-        <div className="flex flex-wrap items-center gap-2 px-2 pb-2 sm:px-4">
+        <div className="flex flex-wrap items-center gap-2 pb-2">
           <Tabs
             variant="segmented"
             value={tab}
@@ -410,40 +416,42 @@ function EditorView({
         </div>
       </header>
 
-      {backup && (
-        <Banner
-          className="m-2 sm:mx-4"
-          variant="alert"
-          icon={<ClockCounterClockwiseIcon />}
-          description={`${new Date(backup.at).toLocaleString("ja-JP")} に編集した未保存の内容がこの端末に残っています。${
-            backup.sha !== saved.sha ? "（その後 GitHub 上で更新されています）" : ""
-          }`}
-          action={
-            <div className="flex gap-2">
-              <Banner.Action variant="primary" onClick={restore}>
-                復元する
-              </Banner.Action>
-              <Banner.Action variant="secondary" onClick={discard}>
-                破棄する
-              </Banner.Action>
-            </div>
-          }
-        />
-      )}
+      <div className={`${columnClass} flex min-h-0 flex-1 flex-col bg-kumo-base`}>
+        {backup && (
+          <Banner
+            className="mt-2"
+            variant="alert"
+            icon={<ClockCounterClockwiseIcon />}
+            description={`${new Date(backup.at).toLocaleString("ja-JP")} に編集した未保存の内容がこの端末に残っています。${
+              backup.sha !== saved.sha ? "（その後 GitHub 上で更新されています）" : ""
+            }`}
+            action={
+              <div className="flex gap-2">
+                <Banner.Action variant="primary" onClick={restore}>
+                  復元する
+                </Banner.Action>
+                <Banner.Action variant="secondary" onClick={discard}>
+                  破棄する
+                </Banner.Action>
+              </div>
+            }
+          />
+        )}
 
-      <div className="relative min-h-0 flex-1">
-        <textarea
-          ref={textarea}
-          hidden={tab !== "edit"}
-          aria-label="本文"
-          spellCheck={false}
-          autoCapitalize="off"
-          className="block size-full resize-none border-0 bg-kumo-base px-[max(1.25rem,env(safe-area-inset-left),calc((100%-48rem)/2))] pt-5 pb-[max(2.5rem,env(safe-area-inset-bottom))] text-base leading-[1.8] text-kumo-default outline-none [tab-size:2]"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
-        <div hidden={tab !== "preview"} className="size-full">
-          <Preview content={content} active={tab === "preview"} />
+        <div className="relative min-h-0 flex-1">
+          <textarea
+            ref={textarea}
+            hidden={tab !== "edit"}
+            aria-label="本文"
+            spellCheck={false}
+            autoCapitalize="off"
+            className="block size-full resize-none border-0 bg-kumo-base px-0 pt-5 pb-[max(2.5rem,env(safe-area-inset-bottom))] text-base leading-[1.8] text-kumo-default outline-none [tab-size:2]"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
+          <div hidden={tab !== "preview"} className="size-full">
+            <Preview content={content} active={tab === "preview"} />
+          </div>
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@
 
 Eleventy 側では `.eleventy.js` のプリプロセッサが、本番ビルドのときに `draft: true` の記事を出力から外す。記事ページだけでなく、一覧、タグ、RSS、Algolia の対象からも外れる。`npm run dev` では下書きも表示される。
 
-`npm run save-algolia` は、ビルド結果にない記事（下書きに戻した記事や削除した記事）を Algolia のインデックスから消す。そのため `ALGOLIA_API_KEY` に `addObject` に加えて `browse` と `deleteObject` の ACL が必要になる。権限が足りないときは警告を出すだけで、デプロイは止めない。
+`npm run save-algolia` は、ビルド結果にない記事（下書きに戻した記事や削除した記事）を Algolia のインデックスから消す。そのため `ALGOLIA_API_KEY` に `addObject` に加えて `browse` と `deleteObject` の ACL が必要になる。権限が足りないときは警告を出すだけで、デプロイは止めない。Preview 環境にキーが無いときはインデックスを更新せずビルドを通す。`master` の本番ビルドでキーが無いときは失敗させる。
 
 ## セットアップ
 
