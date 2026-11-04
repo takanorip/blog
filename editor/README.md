@@ -5,6 +5,7 @@
 - GitHub OAuth でログインし、`ALLOWED_GITHUB_LOGIN` に設定したユーザーだけが使える
 - 記事の新規作成とファイル名（= URL `/posts/<ファイル名>/`）の変更ができる（リネームは 1 コミットで行う）
 - プレーンな textarea で front matter ごと編集し、「編集」「プレビュー」をタブで切り替える（PC でもスマホでも同じ）
+- 「front matter」ボタンで、ファイルの先頭にブログと同じ front matter（title、date、tags、layout、下書きなら `draft: true`）を挿入できる。すでにあるときはボタンは押せない
 - プレビューは記事ページ（`layouts/blog.njk`）と同じ HTML 構造・同じコードハイライト出力を組み立て、公開中の `/css/index.css` と `/css/prism.css` をそのまま読み込む。`.eleventy.js` の markdown-it 設定を変えたら `editor/client/markdown.ts` も合わせる
 - 画面は React と [Kumo](https://kumo-ui.com/) で作っていて、ダークモードは OS の設定に従う（ブログと同じ）
 - 下書きは front matter の `draft: true`。下書きのまま保存したコミットには `[skip ci]` が付くので、Cloudflare Pages のビルドは走らない

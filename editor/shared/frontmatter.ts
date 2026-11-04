@@ -58,13 +58,35 @@ export const setDraft = (content: string, draft: boolean): string => {
   return `---\n${block}\n---\n${content.slice(match[0].length)}`;
 };
 
-export const newPostTemplate = (date: string) => `---
+export const frontMatterTemplate = (date: string, draft: boolean) => {
+  const draftLine = draft ? "\ndraft: true" : "";
+  return `---
 title: 
 date: ${date}
 tags:
   - random
-layout: layouts/blog.njk
-draft: true
+layout: layouts/blog.njk${draftLine}
 ---
-
 `;
+};
+
+export const newPostTemplate = (date: string) => `${frontMatterTemplate(date, true)}\n`;
+
+// The caret lands right after "title: " so the title can be typed immediately.
+export const frontMatterCursor = (content: string) => {
+  const at = content.search(/^title:[ \t]*/m);
+  if (at < 0) return 0;
+  const match = /^title:[ \t]*/.exec(content.slice(at));
+  return at + (match?.[0].length ?? 0);
+};
+
+// Prepends the blog front matter. Returns null when the file already has one,
+// because a second block would not be read as front matter.
+export const insertFrontMatter = (content: string, date: string, draft: boolean) => {
+  if (splitFrontMatter(content).block !== null) return null;
+  const block = `${frontMatterTemplate(date, draft)}\n`;
+  return {
+    content: block + content.replace(/^\r?\n+/, ""),
+    cursor: frontMatterCursor(block),
+  };
+};
