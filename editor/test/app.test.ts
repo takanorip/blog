@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { afterEach, beforeEach, describe, test } from "node:test";
 import { app, type Env } from "../server/app";
-import { parseFrontMatter, setDraft } from "../shared/frontmatter";
+import { insertFrontMatter, newPostTemplate, parseFrontMatter, setDraft } from "../shared/frontmatter";
 import { installMockGitHub, type MockGitHub } from "./mock-github";
 
 const ORIGIN = "https://blog.example.com";
@@ -266,5 +266,19 @@ describe("front matter", () => {
   test("handles files without front matter", () => {
     assert.equal(setDraft("body", true), "---\ndraft: true\n---\nbody");
     assert.equal(setDraft("body", false), "body");
+  });
+
+  test("inserts the blog front matter in front of the body", () => {
+    const inserted = insertFrontMatter("\n\n本文\n", "2026-11-05", true);
+    assert.ok(inserted);
+    assert.equal(inserted.content, `${newPostTemplate("2026-11-05")}本文\n`);
+    assert.equal(inserted.content.slice(inserted.cursor - 7, inserted.cursor), "title: ");
+    assert.equal(parseFrontMatter(inserted.content).draft, true);
+
+    const published = insertFrontMatter("本文", "2026-11-05", false);
+    assert.ok(published);
+    assert.equal(parseFrontMatter(published.content).draft, false);
+    assert.equal(parseFrontMatter(published.content).date, "2026-11-05");
+    assert.equal(insertFrontMatter(published.content, "2026-11-05", false), null);
   });
 });

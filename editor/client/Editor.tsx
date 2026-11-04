@@ -10,9 +10,11 @@ import {
   ArrowSquareOutIcon,
   ClockCounterClockwiseIcon,
   FileXIcon,
+  PlusIcon,
 } from "@phosphor-icons/react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
+  insertFrontMatter,
   isValidSlug,
   newPostTemplate,
   parseFrontMatter,
@@ -142,6 +144,7 @@ function EditorView({
   });
   const textarea = useRef<HTMLTextAreaElement>(null);
   const pendingSelection = useRef<[number, number] | null>(null);
+  const [cursorRequest, setCursorRequest] = useState(0);
 
   const isNew = saved.sha === null;
   const savedIsDraft = isNew || parseFrontMatter(saved.saved).draft;
@@ -177,10 +180,11 @@ function EditorView({
   }, [content, slugValue]);
 
   useLayoutEffect(() => {
-    if (!pendingSelection.current || !textarea.current) return;
+    if (!pendingSelection.current || !textarea.current || tab !== "edit") return;
+    textarea.current.focus();
     textarea.current.setSelectionRange(...pendingSelection.current);
     pendingSelection.current = null;
-  }, [content]);
+  }, [content, tab, cursorRequest]);
 
   useEffect(() => {
     if (routeSlug !== null || !textarea.current) return;
@@ -295,6 +299,18 @@ function EditorView({
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  const hasFrontMatter = splitFrontMatter(content).block !== null;
+
+  const addFrontMatter = () => {
+    const date = /^(\d{4}-\d{2}-\d{2})/.exec(nextSlug)?.[1] ?? todayInTokyo();
+    const inserted = insertFrontMatter(content, date, savedIsDraft);
+    if (!inserted) return;
+    pendingSelection.current = [inserted.cursor, inserted.cursor];
+    setCursorRequest((n) => n + 1);
+    setTab("edit");
+    setContent(inserted.content);
+  };
+
   const restore = () => {
     if (!backup) return;
     setContent(backup.content);
@@ -351,7 +367,7 @@ function EditorView({
             </LinkButton>
           )}
         </EditorBar>
-        <div className="flex items-center gap-2 px-2 pb-2 sm:px-4">
+        <div className="flex flex-wrap items-center gap-2 px-2 pb-2 sm:px-4">
           <Tabs
             variant="segmented"
             value={tab}
@@ -361,21 +377,36 @@ function EditorView({
               { value: "preview", label: "プレビュー" },
             ]}
           />
-          <span className="flex-1" />
           <Button
             variant="secondary"
-            disabled={busy}
-            onClick={() => save(savedIsDraft ? "draft" : "unpublish")}
+            size="sm"
+            icon={PlusIcon}
+            disabled={hasFrontMatter}
+            title={
+              hasFrontMatter
+                ? "front matter はすでにあります"
+                : "front matter を先頭に挿入"
+            }
+            onClick={addFrontMatter}
           >
-            {savedIsDraft ? "下書き保存" : "下書きに戻す"}
+            front matter
           </Button>
-          <Button
-            variant="primary"
-            loading={busy}
-            onClick={() => save(savedIsDraft ? "publish" : "update")}
-          >
-            {savedIsDraft ? "公開する" : "更新する"}
-          </Button>
+          <div className="ml-auto flex gap-2">
+            <Button
+              variant="secondary"
+              disabled={busy}
+              onClick={() => save(savedIsDraft ? "draft" : "unpublish")}
+            >
+              {savedIsDraft ? "下書き保存" : "下書きに戻す"}
+            </Button>
+            <Button
+              variant="primary"
+              loading={busy}
+              onClick={() => save(savedIsDraft ? "publish" : "update")}
+            >
+              {savedIsDraft ? "公開する" : "更新する"}
+            </Button>
+          </div>
         </div>
       </header>
 
