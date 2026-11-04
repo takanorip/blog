@@ -46,30 +46,29 @@ export default function (eleventyConfig) {
     cacheText: true,
   });
   eleventyConfig.setDataDeepMerge(true);
+  eleventyConfig.addPreprocessor("drafts", "*", (data) => {
+    if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+      return false;
+    }
+  });
   eleventyConfig.addNunjucksFilter("dateFormat", (value) => {
     return value instanceof Date ? format(value, "yyyy-MM-dd") : "";
   });
   eleventyConfig.setLibrary("md", markdownLib);
-  eleventyConfig.addCollection("algolia", async (collection) => {
-    const blog = collection.getFilteredByTags("blog");
-    const result = await Promise.all(blog.map(async (item) => {
-      const frontMatter = await item.template.read();
-      const body = bodyText(frontMatter.content);
+  eleventyConfig.addCollection("algolia", (collection) =>
+    collection.getFilteredByTags("blog").map((item) => {
+      const body = bodyText(item.rawInput);
       return {
-        action: "partialUpdateObject",
-        body: {
-          id: item.fileSlug,
-          objectID: item.fileSlug,
-          url: item.url,
-          body: body,
-          excerpt: body.substring(0, 79) + "...",
-          title: item.data.title,
-          createdAt: format(item.date, "yyyy-MM-dd"),
-        },
+        id: item.fileSlug,
+        objectID: item.fileSlug,
+        url: item.url,
+        body: body,
+        excerpt: body.substring(0, 79) + "...",
+        title: item.data.title,
+        createdAt: format(item.date, "yyyy-MM-dd"),
       };
-    }))
-    return result;
-  });
+    }),
+  );
   eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.addCollection("postsGroupedByYear", (collection) => {
     const posts = collection.getFilteredByTags("blog");

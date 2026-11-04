@@ -102,3 +102,7 @@ _site
 # End of https://www.gitignore.io/api/node
 # Local Netlify folder
 .netlify
+
+# Cloudflare Pages local dev
+.wrangler
+.dev.vars

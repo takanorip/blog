@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16191d" media="(prefers-color-scheme: dark)" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Blog Editor" />
+    <title>Blog Editor - takanorip blog</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/admin/manifest.webmanifest" />
+    <script>
+      // The blog follows the OS color scheme, so the editor (and its preview) does too.
+      (() => {
+        const dark = matchMedia("(prefers-color-scheme: dark)");
+        const apply = () => document.documentElement.setAttribute("data-mode", dark.matches ? "dark" : "light");
+        apply();
+        dark.addEventListener("change", apply);
+      })();
+    </script>
+    <link rel="stylesheet" href="/admin/app.css" />
+    <script type="module" src="/admin/app.js"></script>
+  </head>
+  <body>
+    <div id="app" class="isolate"></div>
+  </body>
+</html>

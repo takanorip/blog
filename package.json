@@ -7,7 +7,11 @@
   "scripts": {
     "dev": "npx @11ty/eleventy --input=src --serve",
     "save-algolia": "tsx scripts/algoliaIndex.ts",
-    "build": "eleventy --input=src && npm run save-algolia",
+    "build": "eleventy --input=src && npm run build:editor && npm run save-algolia",
+    "build:editor": "tsx editor/build.ts",
+    "editor:dev": "tsx editor/dev.ts",
+    "editor:typecheck": "tsc -p editor/tsconfig.json",
+    "editor:test": "tsx --test editor/test/*.test.ts",
     "scaffold": "tsx scripts/scaffold.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,22 +31,44 @@
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@11ty/eleventy-upgrade-help": "^3.0.2",
+    "@cloudflare/kumo": "^2.17.0",
+    "@phosphor-icons/react": "^2.1.10",
     "@takanorip/markdown-it-table-of-contents": "^0.5.2",
-    "algoliasearch": "^5.47.0",
+    "algoliasearch": "^5.61.0",
     "date-fns": "^4.1.0",
     "eleventy-plugin-embed-twitter": "^1.4.3",
+    "hono": "^4.13.16",
     "lodash.groupby": "^4.6.0",
     "lodash.orderby": "^4.6.0",
     "lodash.uniq": "^4.5.0",
+    "markdown-it": "^15.0.3",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-for-inline": "^2.0.1",
     "minimist": "^1.2.8",
     "node-html-to-image": "^5.0.0",
+    "prismjs": "^1.30.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "remove-markdown": "^0.6.3",
     "tsx": "^4.21.0"
   },
   "devDependencies": {
+    "@hono/node-server": "^2.1.6",
+    "@tailwindcss/cli": "^4.3.4",
+    "@types/markdown-it": "^14.2.0",
     "@types/minimist": "^1.2.5",
-    "prettier": "^3.8.1"
+    "@types/node": "^26.6.6",
+    "@types/prismjs": "^1.26.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^4.3.4",
+    "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "@parcel/watcher": false,
+    "puppeteer": false
   }
 }

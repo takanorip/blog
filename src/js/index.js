@@ -1,10 +1,11 @@
-const search = instantsearch({
-  indexName: "blog",
-  searchClient: algoliasearch("T3J60MBUA8", "8f49853dd7e9830263fdea7ff69497ee"),
-});
-
+const { liteClient } = window["algoliasearch/lite"];
 const { configure, searchBox, poweredBy, hits, pagination } =
   instantsearch.widgets;
+
+const search = instantsearch({
+  indexName: "blog",
+  searchClient: liteClient("T3J60MBUA8", "8f49853dd7e9830263fdea7ff69497ee"),
+});
 
 search.addWidgets([
   configure({
@@ -22,14 +23,16 @@ search.addWidgets([
   hits({
     container: "#hits",
     templates: {
-      item(hit) {
-        return `
+      item: (hit, { html, components }) => html`
         <a class="takanorip-hitLink" href="${hit.url}">
-          <p class="takanorip-hitName">${hit._highlightResult.title.value}</p>
-          <p class="takanorip-hitExcerpt">${hit._snippetResult.body.value}</p>
+          <p class="takanorip-hitName">
+            ${components.Highlight({ hit, attribute: "title" })}
+          </p>
+          <p class="takanorip-hitExcerpt">
+            ${components.Snippet({ hit, attribute: "body" })}
+          </p>
         </a>
-        `;
-      },
+      `,
     },
   }),
   pagination({
