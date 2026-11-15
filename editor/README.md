@@ -23,7 +23,7 @@
 
 Eleventy 側では `.eleventy.js` のプリプロセッサが、本番ビルドのときに `draft: true` の記事を出力から外す。記事ページだけでなく、一覧、タグ、RSS、Algolia の対象からも外れる。`npm run dev` では下書きも表示される。
 
-`npm run save-algolia` は、ビルド結果にない記事（下書きに戻した記事や削除した記事）を Algolia のインデックスから消す。そのため `ALGOLIA_API_KEY` に `addObject` に加えて `browse` と `deleteObject` の ACL が必要になる。権限が足りないときは警告を出すだけで、デプロイは止めない。
+`npm run save-algolia` は、ビルド結果にない記事（下書きに戻した記事や削除した記事）を Algolia のインデックスから消す。そのため `ALGOLIA_API_KEY` に `addObject` に加えて `browse` と `deleteObject` の ACL が必要になる。権限が足りないときは警告を出すだけで、デプロイは止めない。この同期は本番ブランチ `master` のビルドだけで行う。Cloudflare Pages のそれ以外のブランチはプレビューデプロイで、環境変数は Production と別なので、キーが無くてもビルドは成功させ、本番の検索インデックスは書き換えない。
 
 ## セットアップ
 
@@ -54,7 +54,7 @@ Pages プロジェクトの Settings → Variables and Secrets に以下を設�
 
 ### 3. ビルド設定
 
-Pages のビルドコマンドは `npm run build` にしておく。`npm run build` は Eleventy のビルドに加えて `npm run build:editor` でエディタも `_site/admin/` に出力する。出力ディレクトリは `_site` のまま。Pages はリポジトリ直下の `functions/` を自動で Functions としてデプロイするので、`/admin/api/*` だけが Functions で処理され、ブログ本体は今までどおり静的配信になる。
+Pages のビルドコマンドは `npm run build` にしておく。`npm run build` は Eleventy のビルドに加えて `npm run build:editor` でエディタも `_site/admin/` に出力する。出力ディレクトリは `_site` のまま。Pages はリポジトリ直下の `functions/` を自動で Functions としてデプロイするので、`/admin/api/*` だけが Functions で処理され、ブログ本体は今までどおり静的配信になる。`ALGOLIA_API_KEY` は Production の環境変数に置いておく。Preview には置かなくてよい。
 
 ## ローカル開発
 
