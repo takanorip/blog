@@ -11,7 +11,7 @@
     "build:editor": "tsx editor/build.ts",
     "editor:dev": "tsx editor/dev.ts",
     "editor:typecheck": "tsc -p editor/tsconfig.json",
-    "editor:test": "tsx --test editor/test/*.test.ts",
+    "editor:test": "tsx --test editor/test/*.test.ts scripts/*.test.ts",
     "scaffold": "tsx scripts/scaffold.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

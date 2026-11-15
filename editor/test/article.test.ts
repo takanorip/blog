@@ -51,6 +51,7 @@ describe("renderArticle", () => {
 test("previewDocument loads the site stylesheets", () => {
   const doc = previewDocument("https://blog.example.com");
   assert.match(doc, /<base href="https:\/\/blog.example.com\/"/);
+  assert.match(doc, /family=IBM\+Plex\+Sans\+JP:wght@400;700/);
   assert.match(doc, /href="\/css\/index.css"/);
   assert.match(doc, /href="\/css\/prism.css"/);
   assert.match(doc, /<body class="blog-content takanorip-blogBase"><main class="takanorip-contents">/);
